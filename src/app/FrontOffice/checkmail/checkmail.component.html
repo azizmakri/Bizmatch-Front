@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>BiZMatch - réalisez plus ,cherchez moins.</title>
+    <!-- Add your meta tags and CSS links here -->
+</head>
+
+<body class="page-login">
+    <!-- Loader-->
+    <div id="page-preloader"><!-- Loader content --></div>
+    <!-- Loader end-->
+
+    <div class="page-wrapper">
+        <main class="page-first-screen">
+            <div class="uk-grid uk-grid-small uk-child-width-1-2@s uk-flex-middle uk-width-1-1" data-uk-grid>
+                <div class="logo-big">
+                    <img src="assets/img/logobiz.png" alt="logo" class="animation-navspinv">
+                    <span>BiZMatch</span>
+                </div>
+                <div>
+                    <div class="form-login">
+                        <div class="form-login__box">
+                            <div class="uk-heading-line uk-text-center"><span>Check Your Email</span></div>
+                            <form (ngSubmit)="onCheckEmail(emailInput.value)" #emailCheckForm="ngForm">
+                                <div class="uk-margin">
+                                  <input class="uk-input" type="email" placeholder="Enter your email" #emailInput="ngModel" [(ngModel)]="userEmail" name="userEmail" required>
+                                  <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="uk-alert-danger">
+                                    <div *ngIf="emailInput.errors && emailInput.errors['required']">Email is required.</div>
+                                    <div *ngIf="emailInput.errors && emailInput.errors['email']">Invalid email format.</div>
+                                  </div>
+                                </div>
+                                <div class="uk-margin">
+                                  <button class="uk-button uk-button-danger uk-width-1-1" type="submit" [disabled]="emailCheckForm.form.invalid">Check Email</button>
+                                </div>
+                                <div class="uk-text-center"><span>Back To Login</span><a class="uk-margin-small-left" href="/login">Log In</a></div>
+
+                              </form>
+                 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
