@@ -20,9 +20,9 @@ import { IndexComponent } from './BackOffice/index/index.component';
 import { ClaimsComponent } from './BackOffice/claims/claims.component';
 import { ToDoComponent } from './BackOffice/to-do/to-do.component';
 import { CalendarComponent } from './BackOffice/calendar/calendar.component';
-import { EditProfileComponent } from './BackOffice/edit-profile/edit-profile.component';
 import { WalletComponent } from './FrontOffice/wallet/wallet.component';
 import { MarketComponent } from './FrontOffice/market/market.component';
+import { EditProfileComponent } from './FrontOffice/edit-profile/edit-profile.component';
 const routes: Routes = [
   
         {

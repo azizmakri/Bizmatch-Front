@@ -33,7 +33,7 @@ import { SidebarComponent } from './BackOffice/public/sidebar/sidebar.component'
 import { TopHeaderComponent } from './BackOffice/public/top-header/top-header.component';
 import { ToDoComponent } from './BackOffice/to-do/to-do.component';
 import { CalendarComponent } from './BackOffice/calendar/calendar.component';
-import { EditProfileComponent } from './BackOffice/edit-profile/edit-profile.component';
+import { EditProfileComponent } from './FrontOffice/edit-profile/edit-profile.component';
 import { SidebarfrontComponent } from './FrontOffice/public/sidebarfront/sidebarfront.component';
 import { WalletComponent } from './FrontOffice/wallet/wallet.component';
 import { ModalsComponent } from './FrontOffice/public/modals/modals.component';

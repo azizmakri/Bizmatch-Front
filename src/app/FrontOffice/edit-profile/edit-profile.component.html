@@ -1,12 +1,14 @@
 
 
  <!--start wrapper-->
-    <div class="wrapper">
+    <div class="page-wrapper">
+      <app-header></app-header>
+      
        <!--start sidebar -->
-       <app-sidebar></app-sidebar>
-
-
-       <app-top-header></app-top-header>
+      
+       <aside class="sidebar is-show" id="sidebar">
+        <app-sidebarfront></app-sidebarfront>
+    </aside>
     <!--end top header-->
 
 
@@ -28,16 +30,7 @@
               </nav>
             </div>
             <div class="ms-auto">
-              <div class="btn-group">
-                <button type="button" class="btn btn-outline-dark">Settings</button>
-                <button type="button" class="btn btn-outline-dark split-bg-dark dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
-                </button>
-                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
-                  <a class="dropdown-item" href="javascript:;">Another action</a>
-                  <a class="dropdown-item" href="javascript:;">Something else here</a>
-                  <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-                </div>
-              </div>
+              
             </div>
           </div>
           <!--end breadcrumb-->
@@ -46,7 +39,7 @@
             <div class="col-lg-8 mx-auto">
               <div class="card radius-10">
                 <div class="card-body">
-                  <form>
+                  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
                   <h5 class="mb-3">Edit Profile</h5>
                   <div class="mb-4 d-flex flex-column gap-3 align-items-center justify-content-center">
                     <div class="user-change-photo shadow">
@@ -57,21 +50,13 @@
                   <h5 class="mb-0 mt-4">User Information</h5>
                   <hr>
                   <div class="row g-3">
-                    <div class="col-6">
-                       <label class="form-label">Username</label>
-                       <input type="text" class="form-control" value="@jhon">
-                    </div>
-                    <div class="col-6">
-                     <label class="form-label">Email address</label>
-                     <input type="text" class="form-control" value="xyz@example.com">
-                   </div>
                      <div class="col-6">
                        <label class="form-label">First Name</label>
-                       <input type="text" class="form-control" value="jhon">
+                       <input type="text" class="form-control" value="{{ user.userFirstName }}">
                    </div>
                    <div class="col-6">
                        <label class="form-label">Last Name</label>
-                       <input type="text" class="form-control" value="">
+                       <input type="text" class="form-control" value="{{ user.userLastName }}">
                    </div>
                  </div>
     
@@ -80,31 +65,49 @@
                  <div class="row g-3">
                   <div class="col-12">
                     <label class="form-label">Address</label>
-                    <input type="text" class="form-control" value="47-A, city name, United States">
+                    <input type="text" class="form-control" value="{{ user.location }}">
+                   </div>
+                   <div class="col-12">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" value="{{ user.userPassword }}">
                    </div>
                    <div class="col-6">
-                      <label class="form-label">City</label>
-                      <input type="text" class="form-control" value="@jhon">
-                   </div>
+                    <label class="form-label">Domaines</label>
+                    <select class="form-control">
+                        <option value="InformatiqueEtTechnologie">Informatique et Technologie</option>
+                        <option value="FinanceEtInvestissement">Finance et Investissement</option>
+                        <option value="MarketingEtCommunication">Marketing et Communication</option>
+                        <option value="sante">Santé</option>
+                        <option value="EnergieEtEnvironnement">Énergie et Environnement</option>
+                        <option value="IndustrieEtManufacture">Industrie et Manufacture</option>
+                        <option value="EducationEtFormation">Éducation et Formation</option>
+                        <option value="LoisirsEtTourisme">Loisirs et Tourisme</option>
+                        <option value="Immobilier">Immobilier</option>
+                        <option value="ServicesJuridiques">Services Juridiques</option>
+                        <option value="ArtEtCulture">Art et Culture</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+                
                    <div class="col-6">
-                    <label class="form-label">Country</label>
-                    <input type="text" class="form-control" value="xyz@example.com">
+                    <label class="form-label">Fb</label>
+                    <input type="text" class="form-control" value="{{ user.facebook }}">
                   </div>
                     <div class="col-6">
-                      <label class="form-label">Pin Code</label>
-                      <input type="text" class="form-control" value="jhon">
+                      <label class="form-label">LinkedIn</label>
+                      <input type="text" class="form-control" value="{{ user.linkedIn }}">
                   </div>
                   <div class="col-6">
-                      <label class="form-label">Last Name</label>
-                      <input type="text" class="form-control" value="Deo">
+                      <label class="form-label">Site Web</label>
+                      <input type="text" class="form-control" value="{{ user.siteWeb }}">
                   </div>
-                  <div class="col-12">
+                <div class="col-12">
                     <label class="form-label">About Me</label>
-                    <textarea class="form-control" rows="4" cols="4" placeholder="Describe yourself..."></textarea>
+                    <textarea class="form-control" rows="4" cols="4" value="{{ user.aboutMe }}"></textarea>
                    </div>
                   </div>
                   <div class="text-start mt-3">
-                    <button type="button" class="btn btn-dark px-4">Save Changes</button>
+                    <button type="button" class="btn btn-dark px-4" (click)="updateUser()">Save Changes</button>
                   </div>
                 </form>
                 </div>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -11,6 +11,9 @@ export class UserService {
 
 
   constructor(private http: HttpClient) {}
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   register(user: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/auth/registerNewUser`, user);
@@ -20,11 +23,23 @@ export class UserService {
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.apiUrl);
   }
+
+  updateUser(username: string, userDetails: User): Observable<User> {
+    const url = `${this.baseUrl}/auth/updateUser/${username}`;
+    return this.http.put<User>(url, userDetails, this.httpOptions);
+  }
+
 }
 
 export interface User {
   userName: string;
   userFirstName: string;
   userLastName: string;
-  // ... other fields ...
+  userPassword: string;
+  facebook: string;
+  linkedIn: string;
+  siteWeb: string;
+  aboutMe: string;
+  location: string;
+  Domaines: string;
 }

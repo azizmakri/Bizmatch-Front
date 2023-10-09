@@ -65,10 +65,18 @@ export class AuthServiceService {
   
           // Store the user information in local storage
           // Ensure you pick the correct properties from the response
-          const userInfo = {
+          const userInfo: User = {
             userName: response.user.userName, // Adjust these property names
             userFirstName: response.user.userFirstName, // Adjust these property names
-            userLastName: response.user.userLastName, // Adjust these property names          
+            userLastName: response.user.userLastName, // Adjust these property names
+            userPassword: response.user.userPassword, // Adjust these property names
+            facebook: response.user.facebook, // Adjust these property names
+            linkedIn: response.user.linkedIn, // Adjust these property names
+            siteWeb: response.user.siteWeb, // Adjust these property names
+            aboutMe: response.user.aboutMe, // Adjust these property names
+            location: response.user.location, // Adjust these property names
+            Domaines: response.user.Domaines, // Adjust these property names
+            role: response.user.role // Adjust this based on the actual structure of your response
           };
        
 
