@@ -75,8 +75,10 @@ export class AuthServiceService {
             siteWeb: response.user.siteWeb, // Adjust these property names
             aboutMe: response.user.aboutMe, // Adjust these property names
             location: response.user.location, // Adjust these property names
-            Domaines: response.user.Domaines, // Adjust these property names
-            role: response.user.role // Adjust this based on the actual structure of your response
+            Domaines: response.user.Domaines,
+            userEmail: response.user.userEmail, // Adjust these property names
+            role: response.user.role, // Adjust this based on the actual structure of your response
+            roleDemander: response.user.roleDemander
           };
        
 
@@ -135,7 +137,24 @@ export class AuthServiceService {
   
 
   
+  private getToken(): string {
+    return localStorage.getItem('jwtToken') || '';
+}
+
+
+
+
   
+
+  addRoleToUser(roleName: string, userName: string): Observable<any> {
+    console.log(this.getToken());
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.getToken()  // replace this.getToken() with your token retrieval logic
+    });
+
+    return this.http.put(`${this.baseUrl}/addRole/${roleName}/${userName}`, {}, { headers: headers });
+  }
   
   
 }

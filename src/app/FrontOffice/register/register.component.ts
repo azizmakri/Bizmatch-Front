@@ -12,6 +12,9 @@ export class RegisterComponent {
   user: any = {}; 
   siteKey: string = '6LeTUGQoAAAAAJ2-8XWWWkPMzneUkWOrLRmNwPch';
   captchaResponse!: string;
+  selectedRoleDemander: string='Entreprises';
+  roleDemanders: string[] = ['Entreprises', 'Représentant','entreprise','Visiteur','Investisseur','Collaborateur','externe','Entrepreneur'];
+
 
 
 
@@ -31,6 +34,8 @@ export class RegisterComponent {
   }
 
   registerUser() {
+    this.user.roleDemander = this.selectedRoleDemander; // Assign selectedRoleDemander to user.roleDemander before registration
+
     this.userService.register(this.user).subscribe(
       (response) => {
         console.log('User registered successfully:', response);

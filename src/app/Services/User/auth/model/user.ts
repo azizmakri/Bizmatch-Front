@@ -11,5 +11,7 @@ export class User {
   aboutMe!: string;
   location!: string;
   Domaines!: string;
+  userEmail!: string;
+  roleDemander!: string;
   role!: Role[];
 }

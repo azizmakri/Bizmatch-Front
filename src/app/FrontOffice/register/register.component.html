@@ -100,8 +100,20 @@
                       </div>
                       <div class="uk-margin">
                         <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" [(ngModel)]="captchaResponse" name="recaptcha" required></ngx-recaptcha2>
-                        <div *ngIf="registerForm.form.hasError('required', 'recaptcha')">Captcha is required.</div>
+                        <div *ngIf="registerForm.form.hasError('required', 'recaptcha')"></div>
                       </div>
+                      <div class="uk-margin">
+                        <p> Choose the Role What you want </p>
+                      </div>
+                      <div class="uk-margin">
+                        <select class="uk-select" [(ngModel)]="selectedRoleDemander" name="roleDemander" required #roleDemander="ngModel">
+                          <option *ngFor="let role of roleDemanders" [value]="role">{{role}}</option>
+                        </select>
+                        <div *ngIf="roleDemander.invalid && (roleDemander.dirty || roleDemander.touched)" class="uk-alert-danger">
+                          <div *ngIf="roleDemander.errors && roleDemander.errors['required']">Role Demander is required.</div>
+                        </div>
+                      </div>
+                      
                       <div class="uk-margin">
                         <button class="uk-button uk-button-danger uk-width-1-1" type="submit" [disabled]="registerForm.form.invalid">Register</button>
                       </div>
