@@ -43,6 +43,7 @@ import { SucessComponent } from './FrontOffice/sucess/sucess.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { CheckoutComponent } from './FrontOffice/checkout/checkout.component';
+import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/list-payment-by-user.component';
 
 
 @NgModule({
@@ -80,7 +81,8 @@ import { CheckoutComponent } from './FrontOffice/checkout/checkout.component';
         ModalsComponent,
         CancelComponent,
         SucessComponent,
-        CheckoutComponent
+        CheckoutComponent,
+        ListPaymentByUserComponent
   ],
   imports: [
     BrowserModule,

@@ -26,6 +26,7 @@ import { EditProfileComponent } from './FrontOffice/edit-profile/edit-profile.co
 import { CheckoutComponent } from './FrontOffice/checkout/checkout.component';
 import { CancelComponent } from './FrontOffice/cancel/cancel.component';
 import { SucessComponent } from './FrontOffice/sucess/sucess.component';
+import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/list-payment-by-user.component';
 const routes: Routes = [
   
         {
@@ -128,6 +129,7 @@ const routes: Routes = [
         },
         { path: 'cancel', component: CancelComponent },
         { path: 'success', component: SucessComponent },
+        { path: 'listpaymentuser', component: ListPaymentByUserComponent },
 
 
          {
