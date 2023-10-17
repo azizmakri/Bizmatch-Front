@@ -37,6 +37,7 @@ import { EditProfileComponent } from './FrontOffice/edit-profile/edit-profile.co
 import { SidebarfrontComponent } from './FrontOffice/public/sidebarfront/sidebarfront.component';
 import { WalletComponent } from './FrontOffice/wallet/wallet.component';
 import { ModalsComponent } from './FrontOffice/public/modals/modals.component';
+import { CampagneComponent } from './FrontOffice/campagne/campagne.component';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { ModalsComponent } from './FrontOffice/public/modals/modals.component';
         EditProfileComponent,
         SidebarfrontComponent,
         WalletComponent,
-        ModalsComponent
+        ModalsComponent,
+        CampagneComponent
   ],
   imports: [
     BrowserModule,

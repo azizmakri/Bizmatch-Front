@@ -23,6 +23,7 @@ import { CalendarComponent } from './BackOffice/calendar/calendar.component';
 import { WalletComponent } from './FrontOffice/wallet/wallet.component';
 import { MarketComponent } from './FrontOffice/market/market.component';
 import { EditProfileComponent } from './FrontOffice/edit-profile/edit-profile.component';
+import { CampagneComponent } from './FrontOffice/campagne/campagne.component';
 const routes: Routes = [
   
         {
@@ -117,6 +118,10 @@ const routes: Routes = [
         ,{
           path:'market',
           component:MarketComponent
+        }
+        ,{
+          path:'campagneMarketing',
+          component:CampagneComponent
         }
         ,
          {
