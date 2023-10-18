@@ -30,6 +30,7 @@ import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/l
 import { AdminGuard } from './Services/admin.guard';
 import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
 import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/ajouter-event/ajouter-event.component';
+import { ListEvenementsComponent } from './BackOffice/gestionEvenementConference/list-evenements/list-evenements.component';
 const routes: Routes = [
   
         {
@@ -139,7 +140,8 @@ const routes: Routes = [
         { path: 'crm', component: FormulaireCrmComponent },
 
 /**routes GestionEvenement */
-{ path: 'ajouterEvent', component: AjouterEventComponent },
+{ path: 'Evenements', component: ListEvenementsComponent },
+{ path: 'AjouterEvent', component: AjouterEventComponent },
 /**End  */
 
          {

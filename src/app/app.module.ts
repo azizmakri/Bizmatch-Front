@@ -46,6 +46,7 @@ import { CheckoutComponent } from './FrontOffice/checkout/checkout.component';
 import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/list-payment-by-user.component';
 import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
 import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/ajouter-event/ajouter-event.component';
+import { ListEvenementsComponent } from './BackOffice/gestionEvenementConference/list-evenements/list-evenements.component';
 
 
 @NgModule({
@@ -86,7 +87,8 @@ import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/a
         CheckoutComponent,
         ListPaymentByUserComponent,
         FormulaireCrmComponent,
-        AjouterEventComponent
+        AjouterEventComponent,
+        ListEvenementsComponent
   ],
   imports: [
     BrowserModule,
