@@ -8,19 +8,16 @@
         <app-sidebarfront></app-sidebarfront>
     </aside>
     <!-- Main content goes here -->
+   <!-- Main content goes here -->
+   <h3 class="uk-text-lead">Campagnes Marketing</h3>
+
   
-        <h3 class="uk-text-lead">Campagnes Marketing</h3>
-            <div class="card">
-                  <div class="card-body">
-                      <div class="d-flex align-items-center">
-        <h5 class="mb-0">Customer Details</h5>
-         <form class="ms-auto position-relative">
-           <div class="position-absolute top-50 translate-middle-y search-icon px-3"><ion-icon name="search-sharp"></ion-icon></div>
-           <input class="form-control ps-5" type="text" placeholder="search">
-         </form>
-                      </div>
-                <div class="table-responsive mt-3">
-    <h4 class="uk-text-lead">List of Campaings</h4>
+<div class="card-body">
+    <div class="table-responsive mt-3">
+                        
+      <h4 class="uk-text-lead">List Of Campaings</h4>     
+               
+                    <h4 class="uk-text-lead">List Of Campaings</h4>   
  <table class="table align-middle mb-0">
     <thead class="table-light">
       <tr>
@@ -44,12 +41,19 @@
           <td>{{campagne.dateFin | date:'shortDate'}}</td>
           <td>{{campagne.budget}}</td>
           <td>{{campagne.devise}}</td>
-          <td><span class="badge bg-light-success text-success w-100">{{campagne.statut}}</span></td>
+          <td>
+            <span *ngIf="campagne.statut === 'PLANIFIEE'" class="badge bg-light-success text-success w-100">PLANIFIEE</span>
+            <span *ngIf="campagne.statut === 'EN_COURS'" class="badge bg-light-warning text-warning w-100">EN_COURS</span>
+            <span *ngIf="campagne.statut === 'TERMINEE'" class="badge bg-light-danger text-danger w-100">TERMINEE</span>
+        </td>
+       
+        
           <td>
             <div class="table-actions d-flex align-items-center gap-3 fs-6">
             <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Views" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-            <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit" aria-label="Edit" (click)="goToUpdateCampagneMarketing(campagne.id)"><i class="bi bi-pencil-fill"></i></a>
-            <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete" (click)="delete(campagne.id)"><i class="bi bi-trash-fill" ></i></a>
+            <a href="javascript:;" class="text-warning" href="#modal-report" data-uk-toggle data-bs-placement="bottom" title="Edit" data-bs-original-title="Edit" aria-label="Edit" ><i class="bi bi-pencil-fill"></i></a>
+
+              <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete" (click)="delete(campagne.id)"><i class="bi bi-trash-fill" ></i></a>
                 
         </div>
           </td>
@@ -58,8 +62,19 @@
 </table>
                 </div>
 
-                <h4 class="uk-text-lead">Add Campagne Marketing</h4>
-                <div class="container">
+   <h4 class="uk-text-lead">Add Campagne Marketing</h4>
+   <style>
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px; /* Espacement entre les éléments */
+    }
+    .flex-item {
+        flex: 1; /* Chaque élément prend la même largeur */
+    }
+</style>
+
+<div class="container">
     <form #f="ngForm">
         <div class="form-group">
             <label>Nom</label>
@@ -71,41 +86,45 @@
             <textarea name="description" class="form-control" [(ngModel)]="campagne.description" required></textarea>
         </div>
 
-        <div class="form-group">
-            <label>Date Début</label>
-            <input type="date" name="dateDebut" class="form-control" [(ngModel)]="campagne.dateDebut" required>
-        </div>
-
-        <div class="form-group">
-            <label>Date Fin</label>
-            <input type="date" name="dateFin" class="form-control" [(ngModel)]="campagne.dateFin" required>
-        </div>
-
-        <div class="form-group">
-            <label>Budget</label>
-            <input type="number" name="budget" class="form-control" [(ngModel)]="campagne.budget" required>
-        </div>
-
-        <div class="form-group">
-            <label>Devise</label>
-            <input type="text" name="devise" class="form-control" [(ngModel)]="campagne.devise" required>
-        </div>
-
-        <div class="form-group">
-            <label>Statut</label>
-            <input type="text" name="statut" class="form-control" [(ngModel)]="campagne.statut">
-        </div>
-
-        <button type="submit" class="btn btn-primary" [disabled]="f.invalid" (click)="save()">
-            Add
-        </button>
-    </form>
-                </div>
-         
-           
-                 </div>
+        <div class="flex-container">
+            <div class="form-group flex-item">
+                <label>Date Début</label>
+                <input type="date" name="dateDebut" class="form-control" [(ngModel)]="campagne.dateDebut" required>
             </div>
-      
+
+            <div class="form-group flex-item">
+                <label>Date Fin</label>
+                <input type="date" name="dateFin" class="form-control" [(ngModel)]="campagne.dateFin" required>
+            </div>
+        </div>
+
+        <div class="flex-container">
+            <div class="form-group flex-item">
+                <label>Budget</label>
+                <input type="number" name="budget" class="form-control" [(ngModel)]="campagne.budget" required>
+            </div>
+            
+            <div class="form-group flex-item">
+                <label>Devise</label>
+                <select class="form-select" name="devise" class="form-control" [(ngModel)]="campagne.devise" required>
+                    <option value="">Open this select menu</option>
+                    <option value="TND">TND</option>
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                </select>
+            </div>
+        </div>
+       
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary" [disabled]="f.invalid" (click)="save()"> Add </button>
+        </div>
+    </form>
+</div>    
  
+                 </div>
+                 
+                
   </div>
-<app-modals></app-modals>
+
+<app-campagne-edit></app-campagne-edit>
+

@@ -15,7 +15,7 @@ export class CampagneMarketingService {
  url = 'http://localhost:8083/marketing/campagne';
 
  CAMPAGNESMARKETING: any[] = [];
-
+ statut= null // Initialisé à null pour le moment
   private _refresh$=new Subject<void>()
 
   get refresh$(){
@@ -53,4 +53,22 @@ updateCampagneMarketing (id: number, campagne: CampagneMarketing): Observable<Ca
     return this.http.put<CampagneMarketing>(this.url+'/update'+ id, campagne,
     this.httpOptions);
     }
+    updateStatusBasedOnDate(campagne: CampagneMarketing) {
+      let currentDate = new Date();
+      currentDate.setHours(0, 0, 0, 0); // pour n'avoir que la date sans l'heure
+  
+      let dateFin = new Date(campagne.dateFin);
+      dateFin.setHours(0, 0, 0, 0); // pour n'avoir que la date sans l'heure
+  
+      if (dateFin.getTime() < currentDate.getTime()) {
+          campagne.statut = 'TERMINEE';
+      } else if (dateFin.getTime() > currentDate.getTime()) {
+          campagne.statut = 'PLANIFIEE';
+      } else if (dateFin.getTime() === currentDate.getTime())
+        {
+          campagne.statut = 'EN_COURS';
+      }
+  }
+  
+
 }

@@ -38,6 +38,9 @@ import { SidebarfrontComponent } from './FrontOffice/public/sidebarfront/sidebar
 import { WalletComponent } from './FrontOffice/wallet/wallet.component';
 import { ModalsComponent } from './FrontOffice/public/modals/modals.component';
 import { CampagneComponent } from './FrontOffice/campagne/campagne.component';
+import { CampagneEditComponent } from './FrontOffice/campagne-edit/campagne-edit.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -73,7 +76,8 @@ import { CampagneComponent } from './FrontOffice/campagne/campagne.component';
         SidebarfrontComponent,
         WalletComponent,
         ModalsComponent,
-        CampagneComponent
+        CampagneComponent,
+        CampagneEditComponent
   ],
   imports: [
     BrowserModule,
@@ -83,17 +87,15 @@ import { CampagneComponent } from './FrontOffice/campagne/campagne.component';
     FormsModule,
     ReactiveFormsModule,
     NgxCaptchaModule,
-    IonicModule
+    IonicModule,
+    MatDialogModule,
+    NoopAnimationsModule
     
-    
-    
-    
-
-
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
   providers: [AuthServiceService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CampagneEditComponent]
 })
 export class AppModule { }

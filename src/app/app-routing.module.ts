@@ -122,7 +122,8 @@ const routes: Routes = [
         ,{
           path:'campagneMarketing',
           component:CampagneComponent
-        }
+        } 
+        
         ,
          {
         path: "",
