@@ -16,7 +16,7 @@ import { ChatComponent } from './FrontOffice/chat/chat.component';
 import { FriendsComponent } from './FrontOffice/friends/friends.component';
 import { StoreComponent } from './FrontOffice/store/store.component';
 import { UsergroupComponent } from './FrontOffice/usergroup/usergroup.component';
-import { StreamsComponent } from './FrontOffice/streams/streams.component';
+import { StreamsComponent } from './FrontOffice/GestionEvenementConference/streams/streams.component';
 import { CommunityComponent } from './FrontOffice/community/community.component';
 import { AuthServiceService } from './Services/User/auth/auth-service.service';
 import { CheckmailComponent } from './FrontOffice/checkmail/checkmail.component';

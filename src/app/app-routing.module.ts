@@ -10,7 +10,7 @@ import { UsergroupComponent } from './FrontOffice/usergroup/usergroup.component'
 import { StoreComponent } from './FrontOffice/store/store.component';
 import { FriendsComponent } from './FrontOffice/friends/friends.component';
 import { ChatComponent } from './FrontOffice/chat/chat.component';
-import { StreamsComponent } from './FrontOffice/streams/streams.component';
+import { StreamsComponent } from './FrontOffice/GestionEvenementConference/streams/streams.component';
 import { CommunityComponent } from './FrontOffice/community/community.component';
 import { CheckmailComponent } from './FrontOffice/checkmail/checkmail.component';
 import { ResetpasswordComponent } from './FrontOffice/resetpassword/resetpassword.component';
