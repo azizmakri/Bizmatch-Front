@@ -29,6 +29,7 @@ import { SucessComponent } from './FrontOffice/sucess/sucess.component';
 import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/list-payment-by-user.component';
 import { AdminGuard } from './Services/admin.guard';
 import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
+import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/ajouter-event/ajouter-event.component';
 const routes: Routes = [
   
         {
@@ -91,7 +92,7 @@ const routes: Routes = [
         ,{
           path:'users',
           component:UsersComponent,
-          canActivate: [AdminGuard],
+          /*canActivate: [AdminGuard],*/
 
         }
         ,{
@@ -101,7 +102,7 @@ const routes: Routes = [
         ,{
           path:'index',
           component:IndexComponent,
-          canActivate: [AdminGuard],
+          /*canActivate: [AdminGuard],*/
         }
         ,{
           path:'Claims',
@@ -137,7 +138,9 @@ const routes: Routes = [
         { path: 'listpaymentuser', component: ListPaymentByUserComponent },
         { path: 'crm', component: FormulaireCrmComponent },
 
-
+/**routes GestionEvenement */
+{ path: 'ajouterEvent', component: AjouterEventComponent },
+/**End  */
 
          {
         path: "",
