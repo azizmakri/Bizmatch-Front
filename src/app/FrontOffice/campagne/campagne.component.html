@@ -1,24 +1,33 @@
-   <!--start wrapper-->
-   <app-header></app-header>
-          <!--start sidebar -->
-        
-  <div class="d-flex">
+<body class="page-market">
+     <!-- Loader-->
+     <div id="page-preloader">
+        <div class="preloader-1">
+            <div class="loader-text">Loading</div>
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+            <span class="line line-4"></span>
+            <span class="line line-5"></span>
+            <span class="line line-6"></span>
+            <span class="line line-7"></span>
+            <span class="line line-8"></span>
+            <span class="line line-9"></span>
+        </div>
 
-    <aside class="sidebar is-show" id="sidebar">
-        <app-sidebarfront></app-sidebarfront>
-    </aside>
-    <!-- Main content goes here -->
-   <!-- Main content goes here -->
-   <h3 class="uk-text-lead">Campagnes Marketing</h3>
+    </div>
+    <!-- Loader end-->
+    <div class="page-wrapper">
+        <app-header></app-header>
+        <div class="page-content">
+            <aside class="sidebar is-show" id="sidebar">
+                <app-sidebarfront></app-sidebarfront>
+            </aside>
 
-  
-<div class="card-body">
-    <div class="table-responsive mt-3">
+  <main class="page-main">
+        <div class="table-responsive mt-3">
                         
-      <h4 class="uk-text-lead">List Of Campaings</h4>     
-               
-                    <h4 class="uk-text-lead">List Of Campaings</h4>   
- <table class="table align-middle mb-0">
+            <h4 class="uk-text-lead">List Of Campaings</h4>   
+            <table class="table align-middle mb-0">
     <thead class="table-light">
       <tr>
         <th>Id</th>
@@ -59,11 +68,11 @@
           </td>
       </tr>
   </tbody>
-</table>
-                </div>
+            </table>
+        </div>
 
-   <h4 class="uk-text-lead">Add Campagne Marketing</h4>
-   <style>
+            <h4 class="uk-text-lead">Add Campagne Marketing</h4>
+             <style>
     .flex-container {
         display: flex;
         justify-content: space-between;
@@ -72,10 +81,10 @@
     .flex-item {
         flex: 1; /* Chaque élément prend la même largeur */
     }
-</style>
+            </style>
 
-<div class="container">
-    <form #f="ngForm">
+                <div class="container">
+                     <form #f="ngForm">
         <div class="form-group">
             <label>Nom</label>
             <input type="text" name="nom" class="form-control" [(ngModel)]="campagne.nom" required>
@@ -118,13 +127,16 @@
         <div class="mb-3">
             <button type="submit" class="btn btn-primary" [disabled]="f.invalid" (click)="save()"> Add </button>
         </div>
-    </form>
-</div>    
+                     </form>
+                </div>    
  
-                 </div>
-                 
+  </main>
                 
-  </div>
-
+                </div>
+            </div>
 <app-campagne-edit></app-campagne-edit>
+<app-modals></app-modals>
 
+<script src="assets/js/libs.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
