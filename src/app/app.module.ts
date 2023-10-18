@@ -37,6 +37,8 @@ import { EditProfileComponent } from './FrontOffice/edit-profile/edit-profile.co
 import { SidebarfrontComponent } from './FrontOffice/public/sidebarfront/sidebarfront.component';
 import { WalletComponent } from './FrontOffice/wallet/wallet.component';
 import { ModalsComponent } from './FrontOffice/public/modals/modals.component';
+import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
+import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
 
 
 @NgModule({
@@ -71,7 +73,9 @@ import { ModalsComponent } from './FrontOffice/public/modals/modals.component';
         EditProfileComponent,
         SidebarfrontComponent,
         WalletComponent,
-        ModalsComponent
+        ModalsComponent,
+        LisetServiceComponent,
+        DetailServiceComponent
   ],
   imports: [
     BrowserModule,
