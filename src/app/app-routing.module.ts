@@ -27,6 +27,8 @@ import { CheckoutComponent } from './FrontOffice/checkout/checkout.component';
 import { CancelComponent } from './FrontOffice/cancel/cancel.component';
 import { SucessComponent } from './FrontOffice/sucess/sucess.component';
 import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/list-payment-by-user.component';
+import { AdminGuard } from './Services/admin.guard';
+import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
 const routes: Routes = [
   
         {
@@ -88,7 +90,9 @@ const routes: Routes = [
         }
         ,{
           path:'users',
-          component:UsersComponent
+          component:UsersComponent,
+          canActivate: [AdminGuard],
+
         }
         ,{
           path:'UserProfile',
@@ -96,7 +100,8 @@ const routes: Routes = [
         }
         ,{
           path:'index',
-          component:IndexComponent
+          component:IndexComponent,
+          canActivate: [AdminGuard],
         }
         ,{
           path:'Claims',
@@ -130,6 +135,8 @@ const routes: Routes = [
         { path: 'cancel', component: CancelComponent },
         { path: 'success', component: SucessComponent },
         { path: 'listpaymentuser', component: ListPaymentByUserComponent },
+        { path: 'crm', component: FormulaireCrmComponent },
+
 
 
          {

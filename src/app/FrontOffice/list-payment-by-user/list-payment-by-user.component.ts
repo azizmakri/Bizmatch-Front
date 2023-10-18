@@ -7,7 +7,7 @@ import { PaymentService } from 'src/app/Services/User/payment.service';
   styleUrls: ['./list-payment-by-user.component.css']
 })
 export class ListPaymentByUserComponent {
-  userName = 'adminBizmatch';
+  userName = 'amir1999';
   payments!: any[];
 
   constructor(private paymentService: PaymentService) {}

@@ -44,6 +44,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { CheckoutComponent } from './FrontOffice/checkout/checkout.component';
 import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/list-payment-by-user.component';
+import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
 
 
 @NgModule({
@@ -82,7 +83,8 @@ import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/l
         CancelComponent,
         SucessComponent,
         CheckoutComponent,
-        ListPaymentByUserComponent
+        ListPaymentByUserComponent,
+        FormulaireCrmComponent
   ],
   imports: [
     BrowserModule,

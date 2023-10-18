@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { CrmService } from 'src/app/Services/crm.service';
 
 @Component({
-  selector: 'app-modals',
-  templateUrl: './modals.component.html',
-  styleUrls: ['./modals.component.css']
+  selector: 'app-formulaire-crm',
+  templateUrl: './formulaire-crm.component.html',
+  styleUrls: ['./formulaire-crm.component.css']
 })
-export class ModalsComponent {
+export class FormulaireCrmComponent {
   formulaire: any = {
     titre: '',
     description: '',
