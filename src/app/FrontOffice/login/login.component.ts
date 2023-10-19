@@ -11,6 +11,9 @@ export class LoginComponent {
   userName!: string;
   userPassword!: string;
   errorMessage: string | undefined;
+  roleDemanders: string[] = ['Entreprises', 'Représentant','entreprise','Visiteur','Investisseur','Collaborateur','externe','Entrepreneur'];
+
+
   
   constructor(private authService: AuthServiceService, private router: Router) {}
   login() {
@@ -31,7 +34,10 @@ export class LoginComponent {
         const userRole = localStorage.getItem('userRole');
   
         // Navigate based on the user role
-        if (userRole === 'User') {
+        if (userRole === 'User' || userRole === 'Entreprises' || 
+        userRole === 'Représentant' || userRole === 'Visiteur' 
+        || userRole === 'entreprise' || userRole === 'Investisseur' 
+        || userRole === 'Collaborateur'|| userRole === 'externe' || userRole === 'Entrepreneur') {  
           this.router.navigate(['/home']).then(() => {
             window.location.reload();
           });

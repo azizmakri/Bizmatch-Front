@@ -1,0 +1,84 @@
+<body class="page-favourites">
+
+   
+
+    <!-- Loader-->
+    
+    <!-- Loader end-->
+
+
+    <div class="page-wrapper">
+        <app-header></app-header>
+        <div class="page-content">
+            <aside class="sidebar is-show" id="sidebar">
+                <app-sidebarfront></app-sidebarfront>
+            </aside>
+          
+            <main class="page-main">
+                <div class="uk-grid" data-uk-grid>
+                    <div class="uk-width-2-3@l">
+                        <div class="widjet --filters">
+                            <div class="widjet__head">
+                                <h3 class="uk-text-lead">Liste des services</h3>
+                            </div>
+                        </div>
+                        <div *ngFor="let serviceF of services;" class="game-card --horizontal favourites-game">
+                            <div class="game-card__box">
+                                <div class="game-card__info"><a class="game-card__title" [routerLink]="['/detailservices', serviceF.idService]"> {{ serviceF.nomService }}</a>
+                                    <div class="game-card__genre">{{ serviceF.fournisseur.userFirstName }} {{ serviceF.fournisseur.userLastName }}</div>
+                                    <div class="game-card__rating-and-price">
+                                        <div class="game-card__rating"><span>{{serviceF.dateCreation}}</span></div>
+                                        <div class="game-card__price"><span>{{serviceF.prixService}} TND</span></div>
+                                    </div>
+                                    <div class="game-card__bottom">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="uk-width-1-3@l">
+                        <div class="widjet --my-list">
+                            <div class="widjet__head">
+                                <h3 class="uk-text-lead">My Lists</h3>
+                            </div>
+                            <div class="widjet__body">
+                                <ul class="my-game-list">
+                                    <li class="my-game-item">
+                                        <div class="my-game-item__letter" style="background: #4398E8;">S</div>
+                                        <div class="my-game-item__title">Strategy Business</div>
+                                        <div class="my-game-item__more"><a href="05_favourites.html"><i class="ico_more"></i></a></div>
+                                    </li>
+                                    <li class="my-game-item">
+                                        <div class="my-game-item__letter" style="background: #FF5B5B;">A</div>
+                                        <div class="my-game-item__title">Action Business</div>
+                                        <div class="my-game-item__more"><a href="05_favourites.html"><i class="ico_more"></i></a></div>
+                                    </li>
+                                    <li class="my-game-item">
+                                        <div class="my-game-item__letter" style="background: #C73C00;">M</div>
+                                        <div class="my-game-item__title">Multiplayer Business</div>
+                                        <div class="my-game-item__more"><a href="05_favourites.html"><i class="ico_more"></i></a></div>
+                                    </li>
+                                    <li class="my-game-item">
+                                        <div class="my-game-item__letter" style="background: #939393;">B</div>
+                                        <div class="my-game-item__title">Best Business</div>
+                                        <div class="my-game-item__more"><a href="05_favourites.html"><i class="ico_more"></i></a></div>
+                                    </li>
+                                    <li class="my-game-item">
+                                        <div class="my-game-item__letter" style="background: #FF3ED4;">R</div>
+                                        <div class="my-game-item__title">Racing Business</div>
+                                        <div class="my-game-item__more"><a href="05_favourites.html"><i class="ico_more"></i></a></div>
+                                    </li>
+                                </ul><button class="creat-list-btn" [routerLink]="['/addservice']"><i class="ico_add-square"></i><span>Ajouter une nouvelle service</span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <app-footer></app-footer> 
+            </main>
+        </div>
+    </div>
+    <app-modals></app-modals>
+   
+</body>
+

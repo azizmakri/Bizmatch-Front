@@ -29,6 +29,9 @@ import { SucessComponent } from './FrontOffice/sucess/sucess.component';
 import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/list-payment-by-user.component';
 import { AdminGuard } from './Services/admin.guard';
 import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
+import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
+import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
+import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.component';
 const routes: Routes = [
   
         {
@@ -136,6 +139,19 @@ const routes: Routes = [
         { path: 'success', component: SucessComponent },
         { path: 'listpaymentuser', component: ListPaymentByUserComponent },
         { path: 'crm', component: FormulaireCrmComponent },
+        {
+          path:'listeservices',
+          component:LisetServiceComponent
+        }
+        ,{
+          path:'detailservices/:id',
+          component:DetailServiceComponent
+        }
+        ,{
+          path:'addservice',
+          component:AddServiceComponent
+        }
+        ,
 
 
 

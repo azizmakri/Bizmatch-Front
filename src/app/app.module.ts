@@ -45,6 +45,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { CheckoutComponent } from './FrontOffice/checkout/checkout.component';
 import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/list-payment-by-user.component';
 import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
+import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.component';
+import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
+import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 
 @NgModule({
@@ -84,7 +89,10 @@ import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-
         SucessComponent,
         CheckoutComponent,
         ListPaymentByUserComponent,
-        FormulaireCrmComponent
+        FormulaireCrmComponent,
+        AddServiceComponent,
+        DetailServiceComponent,
+        LisetServiceComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +105,10 @@ import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-
     IonicModule,
     MatCardModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatPaginatorModule
+   
+   
     
     
     

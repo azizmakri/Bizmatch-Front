@@ -41,7 +41,7 @@
                       </thead>
                       <tbody>
                         <tr *ngFor="let payment of payments; let i = index">
-                          <td>{{ i + 1 }}</td>
+                          <td>{{ i + 1 + pageIndex * pageSize }}</td> 
                           <td>{{ payment.name }}</td>
                           <td>{{ payment.amount }}</td>
                           <td [ngClass]="{'green-background': payment.paymentStatus === 'payment successful'}">{{ payment.paymentStatus }}</td>
@@ -63,6 +63,11 @@
                         </tr>
                       </tbody>
                     </table>
+                    <mat-paginator [length]="length" 
+                                   [pageSize]="pageSize" 
+                                   [pageIndex]="pageIndex" 
+                                   (page)="onPageChange($event)">
+                    </mat-paginator>
                   </div>
                   
 
