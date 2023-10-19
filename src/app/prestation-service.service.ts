@@ -25,7 +25,10 @@ export class PrestationServiceService {
     return this.http.get<ServiceFournisseur>(url);
   }
 
-  
+  addService(s: ServiceFournisseur, username: string): Observable<ServiceFournisseur> {
+    const url = `${this.baseUrl}/add/${username}`;
+    return this.http.post<ServiceFournisseur>(url, s);
+  }
 }
 
 

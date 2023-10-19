@@ -39,6 +39,7 @@ import { WalletComponent } from './FrontOffice/wallet/wallet.component';
 import { ModalsComponent } from './FrontOffice/public/modals/modals.component';
 import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
 import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
+import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.component';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail
         WalletComponent,
         ModalsComponent,
         LisetServiceComponent,
-        DetailServiceComponent
+        DetailServiceComponent,
+        AddServiceComponent
   ],
   imports: [
     BrowserModule,

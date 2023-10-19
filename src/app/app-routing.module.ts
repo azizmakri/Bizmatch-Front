@@ -25,6 +25,7 @@ import { MarketComponent } from './FrontOffice/market/market.component';
 import { EditProfileComponent } from './FrontOffice/edit-profile/edit-profile.component';
 import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
 import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
+import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.component';
 const routes: Routes = [
   
         {
@@ -91,6 +92,10 @@ const routes: Routes = [
         ,{
           path:'detailservices/:id',
           component:DetailServiceComponent
+        }
+        ,{
+          path:'addservice',
+          component:AddServiceComponent
         }
         ,{
           path:'users',
