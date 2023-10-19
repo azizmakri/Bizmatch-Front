@@ -11,7 +11,8 @@ import { NgForm } from '@angular/forms';
 export class AjouterEventComponent {
   evenement: Evenement = new Evenement();
   userName = 'adminBizmatch';
-  selectedFile: File | null = null;
+  selectedFile: File | null = null; // Ajout de la déclaration de selectedFile
+  previewImage!: string;
 
   constructor(private evenementService: EvenementServiceService) { }
 
@@ -52,6 +53,15 @@ export class AjouterEventComponent {
   }
 
   onFileSelected(event: any) {
-    this.selectedFile = event.target.files[0];
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.previewImage = reader.result as string;
+        this.evenement.imagePath = this.previewImage;
+      };
+      this.selectedFile = file; // Mettre à jour selectedFile ici
+    }
   }
 }

@@ -47,6 +47,7 @@ import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/l
 import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
 import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/ajouter-event/ajouter-event.component';
 import { ListEvenementsComponent } from './BackOffice/gestionEvenementConference/list-evenements/list-evenements.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -104,10 +105,6 @@ import { ListEvenementsComponent } from './BackOffice/gestionEvenementConference
     BrowserAnimationsModule
     
     
-    
-    
-
-
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

@@ -11,12 +11,24 @@ export class ListEvenementsComponent {
   evenements: Evenement[] = [];
 
   constructor(private evenementService: EvenementServiceService) { }
-  ngOnInit() {
-    // Au chargement du composant, récupérez la liste des événements depuis le service
+
+  ngOnInit(): void {
+    this.loadEvents();
+  }
+
+  loadEvents(): void {
     this.evenementService.getAllEvents().subscribe((data) => {
       this.evenements = data;
-      console.log(this.evenements);
-
     });
   }
+
+  getImageFileName(path: string): string {
+  // Sépare le chemin en utilisant le séparateur de dossier '/'
+  const pathParts = path.split('/');
+  // Récupère le dernier élément du tableau, qui est le nom de fichier
+  const fileName = pathParts[pathParts.length - 1];
+  console.log('Chemin de l\'image :', fileName);
+  return fileName;
+}
+
 }

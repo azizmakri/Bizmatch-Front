@@ -21,4 +21,13 @@ export class StreamsComponent implements OnInit {
     });
   }
 
+  getImageFileName(path: string): string {
+    // Sépare le chemin en utilisant le séparateur de dossier '/'
+    const pathParts = path.split('/');
+    // Récupère le dernier élément du tableau, qui est le nom de fichier
+    const fileName = pathParts[pathParts.length - 1];
+    console.log('Chemin de l\'image :', fileName);
+    return fileName;
+  }
+
 }

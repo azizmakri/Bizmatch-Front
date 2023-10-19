@@ -76,9 +76,9 @@
                         <td>{{ evenement.dateFin | date: 'short' }}</td>
                         <td>{{ evenement.description }}</td>
                         <td>
-                            <img [src]="evenement.imagePath"  width="80" height="80">
-                            <!-- <img [src]="evenement.imagePath" [alt]="evenement.nom" width="100" height="100"> -->
-                          </td>
+                          <img [src]="'assets/images/'+getImageFileName(evenement.imagePath)" width="80" height="80">
+                        </td>
+                        
                           
                         <td>{{ evenement.lieu }}</td>
                         <td>{{ evenement.nombreParticipants }}</td>

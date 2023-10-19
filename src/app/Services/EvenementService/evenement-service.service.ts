@@ -35,7 +35,7 @@ export class EvenementServiceService {
     formData.append('description', description);
     formData.append('dateDebut', dateDebut); // Ne pas convertir en format ISO ici
     formData.append('dateFin', dateFin); // Ne pas convertir en format ISO ici
-    formData.append('image', image, image.name);
+    formData.append('image', image);
     formData.append('lieu', lieu);
     formData.append('nombreParticipants', nombreParticipants.toString());
     formData.append('userName', userName);
