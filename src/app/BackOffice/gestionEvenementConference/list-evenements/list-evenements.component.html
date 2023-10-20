@@ -88,10 +88,18 @@
                               data-bs-placement="bottom" title="" data-bs-original-title="Views" aria-label="Views">
                               <i class="bi bi-eye-fill"></i>
                             </a>
-                            <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip"
-                              data-bs-placement="bottom" title="" data-bs-original-title="Edit" aria-label="Edit">
-                              <i class="bi bi-pencil-fill"></i>
-                            </a>
+                         
+                          <a
+                          [routerLink]="['/ModifierEvenement', evenement.id]"
+                          class="text-warning"
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="bottom"
+                          title=""
+                          data-bs-original-title="Edit"
+                          aria-label="Edit">
+                          <i class="bi bi-pencil-fill"></i>
+                        </a>
+                          
                             <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip"
                               data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete">
                               <i class="bi bi-trash-fill"></i>

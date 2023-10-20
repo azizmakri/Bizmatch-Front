@@ -1,0 +1,15 @@
+/* Dans votre fichier CSS personnalisé */
+.custom-button {
+    background-color: #007bff; /* Couleur de fond bleue */
+    color: #fff; /* Couleur de texte blanche */
+    border: none; /* Pas de bordure */
+    padding: 10px 20px; /* Rembourrage intérieur */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de souris en forme de main */
+  }
+  
+  .custom-button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+  }
+
+  

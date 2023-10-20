@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Evenement } from 'src/app/Model/Evenement';
-import {  EvenementServiceService } from 'src/app/Services/EvenementService/evenement-service.service';
+import { EvenementServiceService } from 'src/app/Services/EvenementService/evenement-service.service';
 
 @Component({
   selector: 'app-streams',
@@ -17,17 +17,40 @@ export class StreamsComponent implements OnInit {
     this.evenementService.getAllEvents().subscribe((data) => {
       this.evenements = data;
       console.log(this.evenements);
-
     });
   }
 
   getImageFileName(path: string): string {
-    // Sépare le chemin en utilisant le séparateur de dossier '/'
+    // Séparez le chemin en utilisant le séparateur de dossier '/'
     const pathParts = path.split('/');
-    // Récupère le dernier élément du tableau, qui est le nom de fichier
+    // Récupérez le dernier élément du tableau, qui est le nom de fichier
     const fileName = pathParts[pathParts.length - 1];
     console.log('Chemin de l\'image :', fileName);
     return fileName;
   }
 
+  participateInEvent(eventId: number) {
+    // Appelez le service pour participer à l'événement en utilisant eventId et userName
+    const userName = 'Amir'; // Nom d'utilisateur statique
+    this.evenementService.participateInEvent(eventId, userName).subscribe(
+      (response) => {
+        // Traitez la réponse du service ici
+        console.log('Réponse de participation :', response);
+  
+        // Vérifiez si la réponse est une chaîne de texte indiquant le succès
+        if (typeof response === 'string' && response.includes('Participation registered successfully')) {
+          // La participation a réussi, affichez un message de succès ou effectuez d'autres actions
+          console.log('Participation réussie');
+        } else {
+          // La réponse n'indique pas une participation réussie, affichez ou traitez le message d'erreur
+          console.error('Erreur de participation :', response);
+        }
+      },
+      (error) => {
+        // Gérez les erreurs ici (par exemple, affichez un message d'erreur)
+        console.error('Erreur de participation :', error);
+      }
+    );
+  }
+  
 }

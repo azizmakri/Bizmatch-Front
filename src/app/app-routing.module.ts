@@ -31,6 +31,7 @@ import { AdminGuard } from './Services/admin.guard';
 import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
 import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/ajouter-event/ajouter-event.component';
 import { ListEvenementsComponent } from './BackOffice/gestionEvenementConference/list-evenements/list-evenements.component';
+import { ModifierEvenementComponent } from './BackOffice/gestionEvenementConference/modifier-event/modifier-event.component';
 const routes: Routes = [
   
         {
@@ -142,6 +143,10 @@ const routes: Routes = [
 /**routes GestionEvenement */
 { path: 'Evenements', component: ListEvenementsComponent },
 { path: 'AjouterEvent', component: AjouterEventComponent },
+{
+  path: 'ModifierEvenement/:id', // Utilisez le nom de chemin souhaité
+  component: ModifierEvenementComponent,
+},
 /**End  */
 
          {

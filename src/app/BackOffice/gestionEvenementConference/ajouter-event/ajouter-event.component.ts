@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Evenement } from 'src/app/Model/Evenement';
 import { EvenementServiceService } from 'src/app/Services/EvenementService/evenement-service.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajouter-event',
@@ -14,7 +15,8 @@ export class AjouterEventComponent {
   selectedFile: File | null = null; // Ajout de la déclaration de selectedFile
   previewImage!: string;
 
-  constructor(private evenementService: EvenementServiceService) { }
+  constructor(private evenementService: EvenementServiceService, private router: Router,
+    ) { }
 
   onSubmit(form: NgForm) {
     if (form.valid) {
@@ -43,6 +45,8 @@ export class AjouterEventComponent {
             (evenement) => {
               console.log('Événement ajouté avec succès :', evenement);
               form.reset();
+              this.router.navigate(['/liste-evenements']);
+
             },
             (error) => {
               console.error("Erreur lors de l'ajout de l'événement :", error);
