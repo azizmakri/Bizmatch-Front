@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { CampagneMarketing } from '../Model/CampagneMarketing';
+import { CampagneMarketing } from '../../Model/CampagneMarketing';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +53,7 @@ updateCampagneMarketing (id: number, campagne: CampagneMarketing): Observable<Ca
     return this.http.put<CampagneMarketing>(this.url+'/update'+ id, campagne,
     this.httpOptions);
     }
+    
     updateStatusBasedOnDate(campagne: CampagneMarketing) {
       let currentDate = new Date();
       currentDate.setHours(0, 0, 0, 0); // pour n'avoir que la date sans l'heure
@@ -60,9 +61,9 @@ updateCampagneMarketing (id: number, campagne: CampagneMarketing): Observable<Ca
       let dateFin = new Date(campagne.dateFin);
       dateFin.setHours(0, 0, 0, 0); // pour n'avoir que la date sans l'heure
   
-      if (dateFin.getTime() < currentDate.getTime()) {
+      if (dateFin < currentDate) {
           campagne.statut = 'TERMINEE';
-      } else if (dateFin.getTime() > currentDate.getTime()) {
+      } else if (dateFin > currentDate) {
           campagne.statut = 'PLANIFIEE';
       } else if (dateFin.getTime() === currentDate.getTime())
         {

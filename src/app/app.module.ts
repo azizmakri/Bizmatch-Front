@@ -37,11 +37,13 @@ import { EditProfileComponent } from './FrontOffice/edit-profile/edit-profile.co
 import { SidebarfrontComponent } from './FrontOffice/public/sidebarfront/sidebarfront.component';
 import { WalletComponent } from './FrontOffice/wallet/wallet.component';
 import { ModalsComponent } from './FrontOffice/public/modals/modals.component';
-import { CampagneComponent } from './FrontOffice/campagne/campagne.component';
-import { CampagneEditComponent } from './FrontOffice/campagne-edit/campagne-edit.component';
+import { CampagneComponent } from './FrontOffice/aicha/campagne/campagne.component';
+import { CampagneEditComponent } from './FrontOffice/aicha/campagne-edit/campagne-edit.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { ContenuComponent } from './FrontOffice/aicha/contenu/contenu.component';
+import { ContenuDetailsComponent } from './FrontOffice/aicha/contenu-details/contenu-details.component';
+import { ContenuADDComponent } from './FrontOffice/aicha/contenu-add/contenu-add.component';
 
 @NgModule({
   declarations: [
@@ -66,8 +68,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     UsersComponent,
     FooterComponent,
     MarketComponent,
-
-
     SidebarComponent,
         TopHeaderComponent,
         ToDoComponent,
@@ -77,7 +77,10 @@ import { MatDialogModule } from '@angular/material/dialog';
         WalletComponent,
         ModalsComponent,
         CampagneComponent,
-        CampagneEditComponent
+        CampagneEditComponent,
+        ContenuComponent,
+        ContenuDetailsComponent,
+        ContenuADDComponent
   ],
   imports: [
     BrowserModule,

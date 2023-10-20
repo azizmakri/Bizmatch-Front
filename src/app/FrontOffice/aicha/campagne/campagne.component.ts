@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CampagneMarketing } from 'src/app/Model/CampagneMarketing';
-import { CampagneMarketingService } from 'src/app/Services/campagne-marketing.service';
+import { CampagneMarketingService } from 'src/app/Services/aicha/campagne-marketing.service';
 import { CampagneEditComponent } from '../campagne-edit/campagne-edit.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -44,6 +44,7 @@ export class CampagneComponent {
      
       this.cms.GetAllCampagneMarketing().subscribe((data: CampagneMarketing[]) => {
         this.CampagnesMarketing = data;
+        console.log(data);
       });
       this.updateAllStatuses();
     }

@@ -1,21 +1,5 @@
 <body class="page-market">
-     <!-- Loader-->
-     <div id="page-preloader">
-        <div class="preloader-1">
-            <div class="loader-text">Loading</div>
-            <span class="line line-1"></span>
-            <span class="line line-2"></span>
-            <span class="line line-3"></span>
-            <span class="line line-4"></span>
-            <span class="line line-5"></span>
-            <span class="line line-6"></span>
-            <span class="line line-7"></span>
-            <span class="line line-8"></span>
-            <span class="line line-9"></span>
-        </div>
-
-    </div>
-    <!-- Loader end-->
+   
     <div class="page-wrapper">
         <app-header></app-header>
         <div class="page-content">
@@ -59,7 +43,7 @@
         
           <td>
             <div class="table-actions d-flex align-items-center gap-3 fs-6">
-            <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Views" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
+            <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Views" aria-label="Views" [routerLink]="['/contenu', campagne.id]"><i class="bi bi-eye-fill"></i></a>
             <a href="javascript:;" class="text-warning" href="#modal-report" data-uk-toggle data-bs-placement="bottom" title="Edit" data-bs-original-title="Edit" aria-label="Edit" ><i class="bi bi-pencil-fill"></i></a>
 
               <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete" (click)="delete(campagne.id)"><i class="bi bi-trash-fill" ></i></a>

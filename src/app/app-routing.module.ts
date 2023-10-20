@@ -23,7 +23,12 @@ import { CalendarComponent } from './BackOffice/calendar/calendar.component';
 import { WalletComponent } from './FrontOffice/wallet/wallet.component';
 import { MarketComponent } from './FrontOffice/market/market.component';
 import { EditProfileComponent } from './FrontOffice/edit-profile/edit-profile.component';
-import { CampagneComponent } from './FrontOffice/campagne/campagne.component';
+import { CampagneComponent } from './FrontOffice/aicha/campagne/campagne.component';
+import { Contenu } from './Model/Contenu';
+import { ContenuComponent } from './FrontOffice/aicha/contenu/contenu.component';
+import { ContenuDetailsComponent } from './FrontOffice/aicha/contenu-details/contenu-details.component';
+import { ContenuADDComponent } from './FrontOffice/aicha/contenu-add/contenu-add.component';
+
 const routes: Routes = [
   
         {
@@ -123,8 +128,17 @@ const routes: Routes = [
           path:'campagneMarketing',
           component:CampagneComponent
         } 
-        
-        ,
+        ,{path:'contenu/:id',
+         component:ContenuComponent
+      } ,
+      
+      {path:'contenuDetails/:id',
+         component:ContenuDetailsComponent
+      },{
+        path:'contenuAdd',
+        component:ContenuADDComponent
+      },
+
          {
         path: "",
         redirectTo: "/home",

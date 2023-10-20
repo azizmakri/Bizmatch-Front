@@ -1,3 +1,6 @@
+import { Contenu } from "./Contenu"
+
+
 export class CampagneMarketing 
 {
     id!: number
@@ -8,7 +11,8 @@ export class CampagneMarketing
     budget!: number
     devise!: Devise  // I'm using string for Enum here. You might want to replace this with the exact Enum values if needed.
     statut!: string  // Same comment as for devise. Replace with exact Enum values if needed.
-    }
+    contenus!: Contenu[];
+}
 
     enum Devise {
         TND = "TND",
