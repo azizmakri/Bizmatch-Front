@@ -9,7 +9,7 @@ import { EvenementServiceService } from 'src/app/Services/EvenementService/evene
 })
 export class StreamsComponent implements OnInit {
   evenements: Evenement[] = [];
-
+  evenement !: Evenement;
   constructor(private evenementService: EvenementServiceService) { }
 
   ngOnInit() {
@@ -52,5 +52,18 @@ export class StreamsComponent implements OnInit {
       }
     );
   }
+
+  ajouterProduitFavori(event: Evenement) {
+    const userName = 'Amir'; // Nom d'utilisateur statique
+    this.evenementService.addFavori(userName, event.id).subscribe(
+      () => {
+        // Mettre à jour la propriété estDansFavoris de l'événement
+        event.estDansFavoris = !event.estDansFavoris;
+      },
+      (error) => console.log(error)
+    );
+  }
+
+  
   
 }

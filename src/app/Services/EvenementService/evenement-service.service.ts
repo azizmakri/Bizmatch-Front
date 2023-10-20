@@ -56,6 +56,9 @@
       return this.http.post<string>(`${this.apiUrl}/participate/${eventId}/${userName}`, {});
     }
     
+    addFavori(username: string, idEvent: number): Observable<any> {
+      return this.http.post(`${this.apiUrl}/favoris/${username}/${idEvent}`, null);
+    }
     
 
 

@@ -7,5 +7,6 @@ export class Evenement {
   imagePath!: string;
   lieu!: string;
   nombreParticipants!: number;
+  estDansFavoris!: boolean; // Ajoutez la propriété estDansFavoris
 
 }

@@ -12,4 +12,21 @@
     background-color: #0056b3; /* Couleur de fond au survol */
   }
 
-  
+  /* Styles pour le cœur en rouge */
+.heart-red {
+  color: red; /* Changez la couleur en rouge ou celle de votre choix */
+}
+
+/* Styles pour le cœur en blanc */
+.heart-white {
+  color: white; /* Changez la couleur en blanc ou celle de votre choix */
+}
+.heart-icon {
+  color: white; /* Couleur de base (par exemple, blanc) */
+  cursor: pointer; /* Curseur de type main pour indiquer que l'icône est cliquable */
+}
+
+/* Style pour le cœur rouge (lorsqu'il est sélectionné) */
+.heart-selected {
+  color: red; /* Couleur du cœur sélectionné (par exemple, rouge) */
+}
