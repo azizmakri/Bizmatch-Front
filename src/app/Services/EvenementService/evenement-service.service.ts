@@ -59,7 +59,9 @@
     addFavori(username: string, idEvent: number): Observable<any> {
       return this.http.post(`${this.apiUrl}/favoris/${username}/${idEvent}`, null);
     }
-    
+    deleteProduct(idEvent: number, username: string): Observable<void> {
+      return this.http.delete<void>(`${this.apiUrl}/deleteEvent/${idEvent}/${username}`);
+    }
 
 
   }

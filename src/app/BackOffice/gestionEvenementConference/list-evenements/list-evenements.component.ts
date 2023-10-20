@@ -31,4 +31,13 @@ export class ListEvenementsComponent {
   return fileName;
 }
 
+
+deleteProduct(evenement: any): void {
+  const idUser="adminBizmatch";
+  if (confirm('Are you sure you want to delete this post?')) {
+    this.evenementService.deleteProduct(evenement.id, idUser).subscribe(() => {
+      this.evenements = this.evenements.filter(e => e !== evenement);
+    });
+  }
+}
 }
