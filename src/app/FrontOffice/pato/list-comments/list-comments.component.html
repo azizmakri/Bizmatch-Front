@@ -1,0 +1,64 @@
+<body class="page-chats">
+    <div class="page-wrapper">
+        <app-header></app-header>
+        <div class="page-content">
+            <aside class="sidebar is-show" id="sidebar">
+                <app-sidebarfront></app-sidebarfront>
+            </aside>
+          
+            <main class="page-main">
+                <div class="uk-grid uk-grid-small" data-uk-grid>
+                    <div class="uk-width-2-3@l" >
+                        <div class="chat-messages-box">
+                            <div class="chat-messages-head">
+                                <div class="user-item">
+                                    <div class="user-item__desc">
+                                        <div class="user-item__name">Sofia Dior</div>
+                                    </div>
+                                </div>
+                                <div><a class="ico_call" href="#!"></a><a class="ico_info-circle" href="#!"></a></div>
+                            </div>
+                            <div  class="chat-messages-body" style="max-height: 370px; overflow-y: auto;">
+                            <div *ngFor="let commenta of room?.commentRoomList" class="chat-messages-body">
+                                <!-- Check if the comment is yours -->
+                                <ng-container *ngIf="commenta?.commentUserId===userconnecte">
+                                    <div class="messages-item --your-message">
+                                        <div class="messages-item__text">{{ commenta?.descriptionComment }}</div>
+                                    </div>
+                                </ng-container>
+                                <!-- Check if the comment is from your friend -->
+                                <ng-container *ngIf="!(commenta?.commentUserId===userconnecte)">
+                                    <div class="messages-item --friend-message">
+                                        <div class="messages-item__text">{{ commenta?.descriptionComment }}</div>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                            <div class="chat-messages-footer">
+                                <form (submit)="onFormSubmit()">
+                                    <div class="chat-messages-form">
+                                        <div class="chat-messages-form-btns">
+                                            <button class="ico_emoji-happy"></button>
+                                            <button class="ico_gallery"></button>
+                                        </div>
+                                        <div class="chat-messages-form-controls">
+                                            <!-- Bind the input to the descriptionComment property -->
+                                            <input class="chat-messages-input" type="text" placeholder="Type a message" [(ngModel)]="descriptionComment" name="descriptionComment">
+                                        </div>
+                                        <div class="chat-messages-form-btn">
+                                            <!-- Add a click event to trigger the addComment method -->
+                                            <button class="ico_arrow-circle-right" type="submit" (click)="addComment()"></button>
+                                        </div>
+                                    </div>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <app-footer></app-footer>
+            </main>
+        </div>
+    </div>
+    <app-modals></app-modals>
+</body>

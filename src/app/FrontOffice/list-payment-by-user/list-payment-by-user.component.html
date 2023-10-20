@@ -1,0 +1,83 @@
+<body >
+
+    <!-- Loader-->
+    <div id="page-preloader">
+        <div class="preloader-1">
+            <div class="loader-text">Loading</div>
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+            <span class="line line-4"></span>
+            <span class="line line-5"></span>
+            <span class="line line-6"></span>
+            <span class="line line-7"></span>
+            <span class="line line-8"></span>
+            <span class="line line-9"></span>
+        </div>
+
+    </div>
+    <!-- Loader end-->
+
+    <div class="page-wrapper">
+   <app-header></app-header>
+        <div class="page-content">
+            <aside class="sidebar is-show" id="sidebar">
+                <app-sidebarfront></app-sidebarfront>
+            </aside>
+          
+            <main class="page-main">
+                <h1>payment Lists</h1>
+
+                <div class="table-responsive mt-3">
+                    <table class="table align-middle">
+                      <thead class="table-secondary">
+                        <tr>
+                          <th>#</th>
+                          <th>Name</th>
+                          <th>Amount</th>
+                          <th>Status</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let payment of payments; let i = index">
+                          <td>{{ i + 1 + pageIndex * pageSize }}</td> 
+                          <td>{{ payment.name }}</td>
+                          <td>{{ payment.amount }}</td>
+                          <td [ngClass]="{'green-background': payment.paymentStatus === 'payment successful'}">{{ payment.paymentStatus }}</td>
+
+                          <td>
+                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
+                              <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Views" aria-label="Views">
+                                <i class="bi bi-eye-fill"></i>
+                              </a>
+                              <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit" aria-label="Edit">
+                                <i class="bi bi-pencil-fill"></i>
+                              </a>
+                              <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Delete" aria-label="Delete">
+                                <i class="bi bi-trash-fill"></i>
+                              </a>
+                             
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <mat-paginator [length]="length" 
+                                   [pageSize]="pageSize" 
+                                   [pageIndex]="pageIndex" 
+                                   (page)="onPageChange($event)">
+                    </mat-paginator>
+                  </div>
+                  
+
+            </main>
+        </div>
+       
+    </div>
+
+   <app-modals></app-modals>
+</body>
+
+
+  

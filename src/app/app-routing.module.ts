@@ -23,9 +23,17 @@ import { CalendarComponent } from './BackOffice/calendar/calendar.component';
 import { WalletComponent } from './FrontOffice/wallet/wallet.component';
 import { MarketComponent } from './FrontOffice/market/market.component';
 import { EditProfileComponent } from './FrontOffice/edit-profile/edit-profile.component';
+import { CheckoutComponent } from './FrontOffice/checkout/checkout.component';
+import { CancelComponent } from './FrontOffice/cancel/cancel.component';
+import { SucessComponent } from './FrontOffice/sucess/sucess.component';
+import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/list-payment-by-user.component';
+import { AdminGuard } from './Services/admin.guard';
+import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
 import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
 import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
 import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.component';
+import { ListRoomsComponent } from './FrontOffice/pato/list-rooms/list-rooms.component';
+import { ListCommentsComponent } from './FrontOffice/pato/list-comments/list-comments.component';
 const routes: Routes = [
   
         {
@@ -86,20 +94,10 @@ const routes: Routes = [
           component:RegisterComponent
         }
         ,{
-          path:'listeservices',
-          component:LisetServiceComponent
-        }
-        ,{
-          path:'detailservices/:id',
-          component:DetailServiceComponent
-        }
-        ,{
-          path:'addservice',
-          component:AddServiceComponent
-        }
-        ,{
           path:'users',
-          component:UsersComponent
+          component:UsersComponent,
+          canActivate: [AdminGuard],
+
         }
         ,{
           path:'UserProfile',
@@ -107,7 +105,8 @@ const routes: Routes = [
         }
         ,{
           path:'index',
-          component:IndexComponent
+          component:IndexComponent,
+          canActivate: [AdminGuard],
         }
         ,{
           path:'Claims',
@@ -134,6 +133,37 @@ const routes: Routes = [
           component:MarketComponent
         }
         ,
+        {
+          path: 'checkout',
+          component: CheckoutComponent,
+        },
+        { path: 'cancel', component: CancelComponent },
+        { path: 'success', component: SucessComponent },
+        { path: 'listpaymentuser', component: ListPaymentByUserComponent },
+        { path: 'crm', component: FormulaireCrmComponent },
+        {
+          path:'listeservices',
+          component:LisetServiceComponent
+        }
+        ,{
+          path:'detailservices/:id',
+          component:DetailServiceComponent
+        }
+        ,{
+          path:'addservice',
+          component:AddServiceComponent
+        }
+        ,{
+          path:'listrooms',
+          component:ListRoomsComponent
+        }
+        ,{path:'comments/:id',
+        component:ListCommentsComponent
+     } 
+        ,
+
+
+
          {
         path: "",
         redirectTo: "/home",

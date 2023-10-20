@@ -37,9 +37,21 @@ import { EditProfileComponent } from './FrontOffice/edit-profile/edit-profile.co
 import { SidebarfrontComponent } from './FrontOffice/public/sidebarfront/sidebarfront.component';
 import { WalletComponent } from './FrontOffice/wallet/wallet.component';
 import { ModalsComponent } from './FrontOffice/public/modals/modals.component';
-import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
-import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CancelComponent } from './FrontOffice/cancel/cancel.component';
+import { SucessComponent } from './FrontOffice/sucess/sucess.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { CheckoutComponent } from './FrontOffice/checkout/checkout.component';
+import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/list-payment-by-user.component';
+import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
 import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.component';
+import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
+import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { ListRoomsComponent } from './FrontOffice/pato/list-rooms/list-rooms.component';
+import { ListCommentsComponent } from './FrontOffice/pato/list-comments/list-comments.component';
+
 
 
 @NgModule({
@@ -75,9 +87,16 @@ import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.
         SidebarfrontComponent,
         WalletComponent,
         ModalsComponent,
-        LisetServiceComponent,
+        CancelComponent,
+        SucessComponent,
+        CheckoutComponent,
+        ListPaymentByUserComponent,
+        FormulaireCrmComponent,
+        AddServiceComponent,
         DetailServiceComponent,
-        AddServiceComponent
+        LisetServiceComponent,
+        ListRoomsComponent,
+        ListCommentsComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +106,13 @@ import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.
     FormsModule,
     ReactiveFormsModule,
     NgxCaptchaModule,
-    IonicModule
+    IonicModule,
+    MatCardModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule
+   
+   
     
     
     

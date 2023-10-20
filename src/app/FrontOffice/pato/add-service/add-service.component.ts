@@ -11,7 +11,7 @@ import { PrestationServiceService } from 'src/app/prestation-service.service';
 export class AddServiceComponent {
 
   public service: ServiceFournisseur = new ServiceFournisseur();
-  public username: string = 'azizmk'; // You need to set this, perhaps through a login system or some other method
+  public username: string = 'amir1999'; // You need to set this, perhaps through a login system or some other method
 
   constructor(private serviceService: PrestationServiceService,private router: Router) {} // Update 'yourServiceName' with the actual service name
 

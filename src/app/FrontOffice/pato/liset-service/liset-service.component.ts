@@ -12,7 +12,7 @@ export class LisetServiceComponent implements OnInit {
   services: ServiceFournisseur[] = [];
   
 
-  constructor(private serviceService: PrestationServiceService,private authService : AuthServiceService) { }
+  constructor(private serviceService: PrestationServiceService) { }
 
   ngOnInit(): void {
     this.serviceService.getServices().subscribe(data => {

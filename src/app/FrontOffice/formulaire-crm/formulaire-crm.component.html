@@ -1,0 +1,341 @@
+<!--start wrapper-->
+<div class="page-wrapper">
+    <app-header></app-header>
+    
+     <!--start sidebar -->
+    
+     <aside class="sidebar is-show" id="sidebar">
+      <app-sidebarfront></app-sidebarfront>
+  </aside>
+  <!--end top header-->
+  
+  
+      <!-- start page content wrapper-->
+      <div class="page-content-wrapper">
+        <!-- start page content-->
+       <div class="page-content">
+  
+        <!--start breadcrumb-->
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+          <div class="breadcrumb-title pe-3">Pages</div>
+          <div class="ps-3">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb mb-0 p-0 align-items-center">
+                <li class="breadcrumb-item"><a href="javascript:;"><ion-icon name="home-outline"></ion-icon></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="ms-auto">
+            
+          </div>
+        </div>
+        <!--end breadcrumb-->
+
+       
+  
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="card radius-10">
+              <div class="card-body">
+                <form (submit)="onSubmit()" class="claim-form">
+                    <h5 class="mb-4">Claim</h5>
+                    <div class="row g-4">
+                        <!-- Service Type -->
+                        <div class="col-6">
+                            <label class="form-label" for="service">Service Type:</label>
+                            <select class="form-control custom-input" id="service" [(ngModel)]="formulaire.service" name="service">
+                                <option value="" disabled>Select a service</option>
+                                <option value="SERVICE_COMMERCIAL">Service Commercial</option>
+                                <option value="SERVICE_TECHNIQUE">Service Technique</option>
+                            </select>
+                        </div>
+                        <!-- Title -->
+                        <div class="col-6">
+                            <label class="form-label" for="titre">Title:</label>
+                            <input type="text" class="form-control custom-input" id="titre" [(ngModel)]="formulaire.titre" name="titre" placeholder="Enter title">
+                        </div>
+                        <!-- Description -->
+                        <div class="col-12">
+                            <label class="form-label" for="description">Description:</label>
+                            <textarea class="form-control custom-input" id="description" rows="4" [(ngModel)]="formulaire.description" name="description" placeholder="Enter details..."></textarea>
+                        </div>
+                    </div>
+                    <div class="text-start mt-4">
+                      <button type="submit" class="btn custom-svg-btn">
+                        <div class="svg-wrapper-1">
+                          <div class="svg-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                              <path fill="none" d="M0 0h24v24H0z"></path>
+                              <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                            </svg>
+                          </div>
+                        </div>
+                        <span>Send</span>
+                      </button>
+                    </div>
+                </form>
+                
+                
+                
+                
+                
+  
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+          <!-- Decoration & Info Column -->
+    
+
+
+
+
+
+        </div><!--end row-->
+        <div class="col-lg-6">
+            <!-- Map Embed -->
+
+            <div class="map-container mb-4">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12893.903224476286!2d10.1863213!3d36.8988646!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e2cb745e5c6f1b%3A0xf69a51ee3c65c12e!2sESB+%3A+Esprit+School+of+Business!5e0!3m2!1sen!2sus!4v1634573703984!5m2!1sen!2sus" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+          </div>
+          
+           
+            <!-- Additional Info -->
+            <div class="info-container">
+              <h5>Our Office Information</h5>
+              <address>
+                  <p><i class="fas fa-map-marker-alt"></i> 18, rue de l'Usine - ZI Aéroport Charguia II 2035 Ariana</p>
+                  <p><i class="fas fa-phone-alt"></i> (+216) 29 603 424</p>
+                  <p><i class="fas fa-envelope"></i> <a href="mailto:saebizmatch@gmail.com">saebizmatch@gmail.com</a></p>
+              </address>
+              <div class="social-icons mt-3">
+                <a href="https://www.facebook.com/bizmatch.SAE" target="_blank" class="me-2">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/bizmatchsae" target="_blank" class="me-2">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/YourTwitterHandle" target="_blank" class="me-2">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://discord.gg/YourDiscordInvite" target="_blank" class="me-2">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="https://github.com/BenSalahAmir" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            
+          </div>
+
+
+         
+          
+          
+        </div>
+       
+  
+        </div>
+       
+        <!-- end page content-->
+       </div>
+       
+  
+  
+       <!--Start Back To Top Button-->
+       <a href="javaScript:;" class="back-to-top"><ion-icon name="arrow-up-outline"></ion-icon></a>
+       <!--End Back To Top Button-->
+  
+       <!--start switcher-->
+  <div class="switcher-body">
+    <div class="offcanvas offcanvas-end shadow border-start-0 p-2" data-bs-scroll="true" data-bs-backdrop="false"
+      tabindex="-1" id="offcanvasScrolling">
+      <div class="offcanvas-header border-bottom">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Theme Customizer</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <h6 class="mb-0">Theme Variation</h6>
+        <hr>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="LightTheme" value="option1">
+          <label class="form-check-label" for="LightTheme">Light</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="SemiDark" value="option1" checked>
+          <label class="form-check-label" for="SemiDark">Semi Dark</label>
+        </div>
+        <hr />
+        <h6 class="mb-0">Header Colors</h6>
+        <hr />
+        <div class="header-colors-indigators">
+          <div class="row row-cols-auto g-3">
+            <div class="col">
+              <div class="indigator headercolor1" id="headercolor1"></div>
+            </div>
+            <div class="col">
+              <div class="indigator headercolor2" id="headercolor2"></div>
+            </div>
+            <div class="col">
+              <div class="indigator headercolor3" id="headercolor3"></div>
+            </div>
+            <div class="col">
+              <div class="indigator headercolor4" id="headercolor4"></div>
+            </div>
+            <div class="col">
+              <div class="indigator headercolor5" id="headercolor5"></div>
+            </div>
+            <div class="col">
+              <div class="indigator headercolor6" id="headercolor6"></div>
+            </div>
+            <div class="col">
+              <div class="indigator headercolor7" id="headercolor7"></div>
+            </div>
+            <div class="col">
+              <div class="indigator headercolor8" id="headercolor8"></div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  <!--end switcher-->
+  
+  
+       <!--start overlay-->
+        <div class="overlay nav-toggle-icon"></div>
+       <!--end overlay-->
+  
+   </div>
+  <!--end wrapper-->
+
+  <style>
+
+    .social-icons i {
+        font-size: 24px;
+        color: #333;
+        transition: color 0.3s;
+    }
+
+    .social-icons a {
+        margin-right: 10px; /* Spacing between icons */
+    }
+
+    .social-icons i:hover {
+        color: #007bff; /* Change this to your preferred hover color */
+      }
+
+      .map-container {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 750px;
+    height: 250px;
+    margin-top: 1cm;
+    margin-left: -2cm;
+    
+
+}
+
+
+        .info-container {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    
+
+}
+
+.info-container h5 {
+    margin-bottom: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #709fdc;
+    display: inline-block;
+}
+
+.info-container p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.info-container p i {
+    color: #709fdc;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.info-container a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.info-container .social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-container .social-icons a {
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+.info-container .social-icons a:last-child {
+    margin-right: 0;
+}
+
+.info-container .social-icons a:hover {
+    opacity: 0.7;
+}
+
+    .claim-form {
+        padding: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        height: 500px;
+        
+    }
+
+    .custom-input {
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        transition: border-color 0.3s ease;
+    }
+
+    .custom-input:focus {
+        border-color: #709fdc;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .custom-btn {
+        padding: 8px 20px;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .custom-btn:hover {
+        background-color: #709fdc;
+    }
+
+    
+</style>
+  

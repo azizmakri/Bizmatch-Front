@@ -19,15 +19,6 @@ export class UserService {
     return this.http.post(`${this.baseUrl}/auth/registerNewUser`, user);
   }
 
-  getUserDetails(userName: string) {
-      // Retrieve the JWT token from local storage
-      const jwtToken = localStorage.getItem('jwtToken');
-  
-      // Set headers with the JWT token for authentication
-      
-    return this.http.get(`${this.baseUrl}/user/getUserDetails/${userName}`);
-  }
-
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.apiUrl);
