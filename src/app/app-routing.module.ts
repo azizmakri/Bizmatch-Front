@@ -27,11 +27,11 @@ import { CheckoutComponent } from './FrontOffice/checkout/checkout.component';
 import { CancelComponent } from './FrontOffice/cancel/cancel.component';
 import { SucessComponent } from './FrontOffice/sucess/sucess.component';
 import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/list-payment-by-user.component';
-import { AdminGuard } from './Services/admin.guard';
 import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
 import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/ajouter-event/ajouter-event.component';
 import { ListEvenementsComponent } from './BackOffice/gestionEvenementConference/list-evenements/list-evenements.component';
 import { ModifierEvenementComponent } from './BackOffice/gestionEvenementConference/modifier-event/modifier-event.component';
+import { ListFavorisComponent } from './FrontOffice/gestionEvenementConference/list-favoris/list-favoris.component';
 const routes: Routes = [
   
         {
@@ -146,7 +146,11 @@ const routes: Routes = [
 {
   path: 'ModifierEvenement/:id', // Utilisez le nom de chemin souhaité
   component: ModifierEvenementComponent,
+ 
 },
+ { path: 'ListFavoris', // Utilisez le nom de chemin souhaité
+ component: ListFavorisComponent,
+ },
 /**End  */
 
          {

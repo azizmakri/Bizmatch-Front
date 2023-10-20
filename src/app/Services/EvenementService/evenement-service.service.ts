@@ -62,6 +62,8 @@
     deleteProduct(idEvent: number, username: string): Observable<void> {
       return this.http.delete<void>(`${this.apiUrl}/deleteEvent/${idEvent}/${username}`);
     }
-
+    getProductsFavoris(username: string):Observable<any[]>{
+      return this.http.get<any[]>(`${this.apiUrl}/favoris/${username}`)
+    }
 
   }

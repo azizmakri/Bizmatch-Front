@@ -49,6 +49,7 @@ import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/a
 import { ListEvenementsComponent } from './BackOffice/gestionEvenementConference/list-evenements/list-evenements.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ModifierEvenementComponent } from './BackOffice/gestionEvenementConference/modifier-event/modifier-event.component';
+import { ListFavorisComponent } from './FrontOffice/gestionEvenementConference/list-favoris/list-favoris.component';
 
 
 @NgModule({
@@ -91,7 +92,8 @@ import { ModifierEvenementComponent } from './BackOffice/gestionEvenementConfere
         FormulaireCrmComponent,
         AjouterEventComponent,
         ListEvenementsComponent,
-        ModifierEvenementComponent
+        ModifierEvenementComponent,
+        ListFavorisComponent
   ],
   imports: [
     BrowserModule,
