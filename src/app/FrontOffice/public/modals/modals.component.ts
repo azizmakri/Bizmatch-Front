@@ -16,23 +16,6 @@ export class ModalsComponent {
   constructor(private formulaireService: CrmService) { }
 
 
-  onSubmit(): void {
-    this.formulaireService.createFormulaire(this.formulaire).subscribe(
-      response => {
-        console.log(response);
-        alert('Formulaire created successfully!');
-      },
-      error => {
-        console.error('Error!', error);
-      }
-    );
-  }
-  clearForm(): void {
-    this.formulaire = {
-      titre: '',
-      description: '',
-      service: ''
-    };
-  }
+ 
   
 }

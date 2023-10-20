@@ -44,7 +44,7 @@
                           <td>{{ i + 1 + pageIndex * pageSize }}</td> 
                           <td>{{ payment.name }}</td>
                           <td>{{ payment.amount }}</td>
-                          <td [ngClass]="{'green-background': payment.paymentStatus === 'payment successful'}">{{ payment.paymentStatus }}</td>
+                          <td><span class="badge bg-light-success text-success w-100">{{ payment.paymentStatus }}</span></td>
 
                           <td>
                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
