@@ -1,0 +1,94 @@
+<!--start wrapper-->
+<div class="wrapper">
+    <app-sidebar></app-sidebar>
+  
+  
+    <app-top-header></app-top-header>
+  
+  
+  <!-- start page content wrapper-->
+  <div class="page-content-wrapper">
+      <!-- start page content-->
+      <div class="page-content">
+        <!--start breadcrumb-->
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+          <div class="breadcrumb-title pe-3">Evenement</div>
+          <div class="ps-3">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb mb-0 p-0 align-items-center">
+                <li class="breadcrumb-item"><a href="javascript:;"><ion-icon name="home-outline"></ion-icon></a></li>
+                <li class="breadcrumb-item active" aria-current="page">Ajouter Evenement</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="ms-auto">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-primary">Settings</button>
+              <button type="button" class="btn btn-outline-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">
+                <a class="dropdown-item" href="javascript:;">Action</a>
+                <a class-a="dropdown-item" href="javascript:;">Another action</a>
+                <a class="dropdown-item" href="javascript:;">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="javascript:;">Separated link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--end breadcrumb-->
+    
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <h5 class="mb-0">Ajouter Evenement</h5>
+            </div>
+            <br>
+           <!-- Ajouter ceci à votre template HTML (ajouter-event.component.html) -->
+  <form (ngSubmit)="onSubmit(form)" #form="ngForm">
+    <div class="mb-3">
+      <label for="nom" class="form-label">Nom</label>
+      <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="evenement.nom" required>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea class="form-control" id="description" name="description" [(ngModel)]="evenement.description" required></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="dateDebut" class="form-label">Date de Début</label>
+      <input type="text" class="form-control" id="dateDebut" name="dateDebut" [(ngModel)]="evenement.dateDebut" required>
+      <!-- Ajoutez une indication de format attendu -->
+      <small class="form-text text-muted">Format attendu : JJ/MM/AAAA</small>
+    </div>
+    <div class="mb-3">
+      <label for="dateDebut" class="form-label">Date Fin</label>
+      <input type="text" class="form-control" id="dateFin" name="dateFin" [(ngModel)]="evenement.dateFin" required>
+      <!-- Ajoutez une indication de format attendu -->
+      <small class="form-text text-muted">Format attendu : JJ/MM/AAAA</small>
+    </div>
+    <div class="form-group">
+      <label>image</label>
+      <input type="file" name="image" class="form-control" (change)="onFileSelected($event)" required>
+      <!-- <div class="alert alert-danger" >
+          La image est obligatoire
+      </div> -->
+      <img *ngIf="previewImage" [src]="previewImage" class="img-thumbnail" style="max-width: 200px;">
+  </div>
+    <div class="mb-3">
+      <label for="lieu" class="form-label">Lieu</label>
+      <input type="text" class="form-control" id="lieu" name="lieu" [(ngModel)]="evenement.lieu" required>
+    </div>
+    <div class="mb-3">
+      <label for="nombreParticipants" class="form-label">Nombre de Participants</label>
+      <input type="number" class="form-control" id="nombreParticipants" name="nombreParticipants" [(ngModel)]="evenement.nombreParticipants" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+          </div>
+        </div>
+      </div>
+      <!-- end page content -->
+    </div>
+    <!-- end page content wrapper -->
+    </div>

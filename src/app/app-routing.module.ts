@@ -10,7 +10,7 @@ import { UsergroupComponent } from './FrontOffice/usergroup/usergroup.component'
 import { StoreComponent } from './FrontOffice/store/store.component';
 import { FriendsComponent } from './FrontOffice/friends/friends.component';
 import { ChatComponent } from './FrontOffice/chat/chat.component';
-import { StreamsComponent } from './FrontOffice/streams/streams.component';
+import { StreamsComponent } from './FrontOffice/gestionEvenementConference/streams/streams.component';
 import { CommunityComponent } from './FrontOffice/community/community.component';
 import { CheckmailComponent } from './FrontOffice/checkmail/checkmail.component';
 import { ResetpasswordComponent } from './FrontOffice/resetpassword/resetpassword.component';
@@ -33,6 +33,11 @@ import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-se
 import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
 import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.component';
 import { ListofPaymentComponent } from './BackOffice/listof-payment/listof-payment.component';
+import { ListEvenementsComponent } from './BackOffice/gestionEvenementConference/list-evenements/list-evenements.component';
+import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/ajouter-event/ajouter-event.component';
+import { ModifierEventComponent } from './BackOffice/gestionEvenementConference/modifier-event/modifier-event.component';
+import { ListFavorisComponent } from './FrontOffice/gestionEvenementConference/list-favoris/list-favoris.component';
+import { DetailEvenementComponent } from './FrontOffice/gestionEvenementConference/detail-evenement/detail-evenement.component';
 const routes: Routes = [
   
         {
@@ -156,6 +161,21 @@ const routes: Routes = [
           component:AddServiceComponent
         }
         ,
+        /**routes GestionEvenement */
+{ path: 'Evenements', component: ListEvenementsComponent },
+{ path: 'AjouterEvent', component: AjouterEventComponent },
+{
+  path: 'ModifierEvenement/:id', // Utilisez le nom de chemin souhaité
+  component: ModifierEventComponent,
+ 
+},
+ { path: 'ListFavoris', // Utilisez le nom de chemin souhaité
+ component: ListFavorisComponent,
+ },
+ { path: 'DetailEvenement/:id', // Utilisez le nom de chemin souhaité
+ component: DetailEvenementComponent,
+ },
+/**End  */
 
 
 

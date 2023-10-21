@@ -16,7 +16,7 @@ import { ChatComponent } from './FrontOffice/chat/chat.component';
 import { FriendsComponent } from './FrontOffice/friends/friends.component';
 import { StoreComponent } from './FrontOffice/store/store.component';
 import { UsergroupComponent } from './FrontOffice/usergroup/usergroup.component';
-import { StreamsComponent } from './FrontOffice/streams/streams.component';
+import { StreamsComponent } from './FrontOffice/gestionEvenementConference/streams/streams.component';
 import { CommunityComponent } from './FrontOffice/community/community.component';
 import { AuthServiceService } from './Services/User/auth/auth-service.service';
 import { CheckmailComponent } from './FrontOffice/checkmail/checkmail.component';
@@ -50,6 +50,11 @@ import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail
 import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ListofPaymentComponent } from './BackOffice/listof-payment/listof-payment.component';
+import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/ajouter-event/ajouter-event.component';
+import { ListEvenementsComponent } from './BackOffice/gestionEvenementConference/list-evenements/list-evenements.component';
+import { ModifierEventComponent } from './BackOffice/gestionEvenementConference/modifier-event/modifier-event.component';
+import { DetailEvenementComponent } from './FrontOffice/gestionEvenementConference/detail-evenement/detail-evenement.component';
+import { ListFavorisComponent } from './FrontOffice/gestionEvenementConference/list-favoris/list-favoris.component';
 
 
 
@@ -94,7 +99,12 @@ import { ListofPaymentComponent } from './BackOffice/listof-payment/listof-payme
         AddServiceComponent,
         DetailServiceComponent,
         LisetServiceComponent,
-        ListofPaymentComponent
+        ListofPaymentComponent,
+        AjouterEventComponent,
+        ListEvenementsComponent,
+        ModifierEventComponent,
+        DetailEvenementComponent,
+        ListFavorisComponent
   ],
   imports: [
     BrowserModule,
