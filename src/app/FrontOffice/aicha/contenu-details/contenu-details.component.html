@@ -1,0 +1,68 @@
+<body class="page-store">
+
+  
+    <div class="page-wrapper">
+        <app-header></app-header>
+        <div class="page-content">
+            <aside class="sidebar is-show" id="sidebar">
+                <app-sidebarfront></app-sidebarfront>
+            </aside>
+            <main class="page-main">
+                <ul class="uk-breadcrumb">
+                    <li><a href="09_games-store.html"><span data-uk-icon="chevron-left"></span><span>Retour</span></a></li>
+                    <li><span>Details Contenu Marketing</span></li>
+                </ul>
+                <h2 class="post-name">{{ contenu?.titre }}</h2>
+                <div class="uk-grid uk-grid-small" data-uk-grid>
+                    <div class="uk-width-1-3@s">
+                        <div class="game-profile-card">
+                            <div class="game-profile-card__media"><img *ngIf="contenu" [src]="'assets/images/' + getImageFileName(contenu.image)" alt="Nom de l'image"></div>
+                            <div class="game-profile-card__intro"><span>{{ contenu?.description }}</span></div>
+                            <ul class="game-profile-card__list">
+                                <li>
+                                    <div>Lien:</div>
+                                    <div class="game-card__rating" style="color: blue;"><span>{{ contenu?.lien }}</span></div>
+                                </li>
+                                <li>
+                                    <div>Release date:</div>
+                                    <div>{{ contenu?.dateCreation }}</div>
+                                </li>
+                                <li>
+                                    <div>Type:</div>
+                                    <div>{{ contenu?.type }}</div>
+                                </li>
+                               
+                            </ul>
+                            <ul class="game-profile-card__type">
+                                <li><span>Strategies</span></li>
+                                <li><span>Business</span></li>
+                                <li><span>sponsorisé</span></li>
+                                <li><span>Marketing</span></li>
+                            </ul>
+                        </div>
+                       
+                    </div>
+                    <div class="uk-width-2-3@s">
+                        <div class="gallery">
+                            <div class="js-gallery-big gallery-big">
+                                <div class="swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide"><img *ngIf="contenu" [src]="'assets/images/' + getImageFileName(contenu.image)" alt="Nom de l'image"></div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                    </div>
+                   
+                </div>
+                <app-footer></app-footer> 
+            </main>
+        </div>
+    </div>
+    <app-modals></app-modals>
+   
+</body>
+
+

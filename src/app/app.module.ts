@@ -55,6 +55,14 @@ import { ListEvenementsComponent } from './BackOffice/gestionEvenementConference
 import { ModifierEventComponent } from './BackOffice/gestionEvenementConference/modifier-event/modifier-event.component';
 import { DetailEvenementComponent } from './FrontOffice/gestionEvenementConference/detail-evenement/detail-evenement.component';
 import { ListFavorisComponent } from './FrontOffice/gestionEvenementConference/list-favoris/list-favoris.component';
+import { CampagneComponent } from './FrontOffice/aicha/campagne/campagne.component';
+import { CampagneEditComponent } from './FrontOffice/aicha/campagne-edit/campagne-edit.component';
+import { ContenuComponent } from './FrontOffice/aicha/contenu/contenu.component';
+import { ContenuAddComponent } from './FrontOffice/aicha/contenu-add/contenu-add.component';
+import { ContenuDetailsComponent } from './FrontOffice/aicha/contenu-details/contenu-details.component';
+import { ObjectifdetailsComponent } from './FrontOffice/aicha/objectifdetails/objectifdetails.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -104,7 +112,13 @@ import { ListFavorisComponent } from './FrontOffice/gestionEvenementConference/l
         ListEvenementsComponent,
         ModifierEventComponent,
         DetailEvenementComponent,
-        ListFavorisComponent
+        ListFavorisComponent,
+        CampagneComponent,
+        CampagneEditComponent,
+        ContenuComponent,
+        ContenuAddComponent,
+        ContenuDetailsComponent,
+        ObjectifdetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -118,7 +132,9 @@ import { ListFavorisComponent } from './FrontOffice/gestionEvenementConference/l
     MatCardModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    MatPaginatorModule
+    MatPaginatorModule, 
+    MatDialogModule,
+    NoopAnimationsModule
    
    
     

@@ -38,6 +38,11 @@ import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/a
 import { ModifierEventComponent } from './BackOffice/gestionEvenementConference/modifier-event/modifier-event.component';
 import { ListFavorisComponent } from './FrontOffice/gestionEvenementConference/list-favoris/list-favoris.component';
 import { DetailEvenementComponent } from './FrontOffice/gestionEvenementConference/detail-evenement/detail-evenement.component';
+import { CampagneComponent } from './FrontOffice/aicha/campagne/campagne.component';
+import { ContenuComponent } from './FrontOffice/aicha/contenu/contenu.component';
+import { ContenuDetailsComponent } from './FrontOffice/aicha/contenu-details/contenu-details.component';
+import { ContenuAddComponent } from './FrontOffice/aicha/contenu-add/contenu-add.component';
+import { ObjectifdetailsComponent } from './FrontOffice/aicha/objectifdetails/objectifdetails.component';
 const routes: Routes = [
   
         {
@@ -174,8 +179,26 @@ const routes: Routes = [
  },
  { path: 'DetailEvenement/:id', // Utilisez le nom de chemin souhaité
  component: DetailEvenementComponent,
- },
+ }
 /**End  */
+
+,{
+  path:'campagneMarketing',
+  component:CampagneComponent
+} 
+,{path:'contenu/:id',
+ component:ContenuComponent
+} ,
+
+{path:'contenuDetails/:id',
+ component:ContenuDetailsComponent
+},{
+path:'contenuAdd',
+component:ContenuAddComponent
+},
+{path:'objectifDetails/:id',
+component:ObjectifdetailsComponent
+},
 
 
 
