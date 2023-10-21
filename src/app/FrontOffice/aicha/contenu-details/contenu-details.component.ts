@@ -10,9 +10,10 @@ import { ContenuService } from 'src/app/Services/aicha/contenu.service';
   styleUrls: ['./contenu-details.component.css']
 })
 export class ContenuDetailsComponent {
+ 
   contenuId!: number;
-  contenu!: Contenu;
-  contenuList !: Contenu[];
+  contenu!: Contenu| undefined;
+  contenuList : Contenu[] = [];
   constructor(
     private route: ActivatedRoute, 
     private contenuService: ContenuService , 
@@ -20,27 +21,32 @@ export class ContenuDetailsComponent {
 }
 
 ngOnInit(): void {
-  // Extract the campagneId from the URL
-  this.route.params.subscribe((params) => {
-    this.contenuId = +params['id']; // Assuming the route parameter is named 'id'
-    // Fetch the CampagneMarketing by campagneId
-    this.getContenuById(this.contenuId);
-   
-  });
+  // Extract the contenuId from the URL
+  this.contenuId = this.route.snapshot.params['id'];
+    this.getContenuDetails(this.contenuId);
+  
 }
 
-getContenuById(contenuId: number): void {
-  this.contenuService.getContenuById(contenuId)
-    .subscribe(
-      (data) => {
-        this.contenu = data;
-       
-        console.log(data);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+getContenuDetails(contenuId: number): void {
+  this.contenuService.getContenuById(contenuId).subscribe(
+    (data) => {
+      this.contenu = data;
+      console.log(data);
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+}
+
+getImageFileName(path: string): string {
+  // Sépare le chemin en utilisant le séparateur de dossier '/'
+  const pathParts = path.split('/');
+  // Récupère le dernier élément du tableau, qui est le nom de fichier
+  const fileName = pathParts[pathParts.length - 1];
+  console.log('Chemin de l\'image :', fileName);
+
+  return fileName;
 }
  
 }

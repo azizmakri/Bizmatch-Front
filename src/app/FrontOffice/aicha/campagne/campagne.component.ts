@@ -60,6 +60,7 @@ export class CampagneComponent {
         location.reload();
     })
   }
+  
     public getCampagneMarketing(): void {
       this.cms.GetAllCampagneMarketing().subscribe((data )=> {
         this.cms.CAMPAGNESMARKETING = data 

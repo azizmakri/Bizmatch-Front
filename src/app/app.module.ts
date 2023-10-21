@@ -44,6 +44,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ContenuComponent } from './FrontOffice/aicha/contenu/contenu.component';
 import { ContenuDetailsComponent } from './FrontOffice/aicha/contenu-details/contenu-details.component';
 import { ContenuADDComponent } from './FrontOffice/aicha/contenu-add/contenu-add.component';
+import { ObjectifdetailsComponent } from './FrontOffice/aicha/objectifdetails/objectifdetails.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { ContenuADDComponent } from './FrontOffice/aicha/contenu-add/contenu-add
         CampagneEditComponent,
         ContenuComponent,
         ContenuDetailsComponent,
-        ContenuADDComponent
+        ContenuADDComponent,
+        ObjectifdetailsComponent
   ],
   imports: [
     BrowserModule,

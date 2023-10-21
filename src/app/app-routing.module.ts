@@ -28,6 +28,7 @@ import { Contenu } from './Model/Contenu';
 import { ContenuComponent } from './FrontOffice/aicha/contenu/contenu.component';
 import { ContenuDetailsComponent } from './FrontOffice/aicha/contenu-details/contenu-details.component';
 import { ContenuADDComponent } from './FrontOffice/aicha/contenu-add/contenu-add.component';
+import { ObjectifdetailsComponent } from './FrontOffice/aicha/objectifdetails/objectifdetails.component';
 
 const routes: Routes = [
   
@@ -138,6 +139,9 @@ const routes: Routes = [
         path:'contenuAdd',
         component:ContenuADDComponent
       },
+      {path:'objectifDetails/:id',
+      component:ObjectifdetailsComponent
+   },
 
          {
         path: "",

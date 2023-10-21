@@ -18,7 +18,7 @@ export class CampagneEditComponent {
   ngOnInit() {
     this.route.params.subscribe(params => {
         const campaignId = +params['id'];  // The '+' converts the string to a number
-        this.loadCampaignDetails(campaignId);
+       this.loadCampaignDetails(campaignId);
     });
 }
 loadCampaignDetails(campaignId: number) {
