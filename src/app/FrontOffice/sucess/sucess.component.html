@@ -21,12 +21,23 @@
         <app-header></app-header>
         <div class="page-content" style="display: flex;"> <!-- Add display: flex -->
 
+            
+
             <aside class="sidebar is-show" id="sidebar">   
                 <app-sidebarfront></app-sidebarfront>
             </aside>
+            <main class="page-main">
+              
 
+                <ul class="uk-breadcrumb">
+                    <li><a href="/home"><span data-uk-icon="chevron-left"></span><span>Retour</span></a></li>
+                    <li><a href="/listpaymentuser"><span data-uk-icon="chevron-right"></span><span>payment Lists User</span></a></li>
+                </ul>
+            
+           
             <!-- Your success message div -->
             <div class="container" style="margin-left: auto;">
+               
                 <div class="left-side">
                  <div class="card">
                   <div class="card-line"></div>
@@ -41,6 +52,7 @@
                   <div class="numbers-line2"></div>
                  </div>
                 </div>
+                
                 <div class="right-side">
                  <div class="new">Payment successfully</div>
                  
@@ -48,6 +60,7 @@
                 
                 </div>
                </div>
+            </main>
 
         </div>
     </div>

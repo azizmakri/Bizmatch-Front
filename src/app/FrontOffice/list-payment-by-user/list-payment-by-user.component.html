@@ -26,6 +26,11 @@
             </aside>
           
             <main class="page-main">
+              <ul class="uk-breadcrumb">
+                <li><a href="/home"><span data-uk-icon="chevron-left"></span><span>Retour</span></a></li>
+                <li><span>payment Lists</span></li>
+            </ul>
+
                 <h1>payment Lists</h1>
 
                 <div class="table-responsive mt-3">
@@ -63,11 +68,6 @@
                         </tr>
                       </tbody>
                     </table>
-                    <mat-paginator [length]="length" 
-                                   [pageSize]="pageSize" 
-                                   [pageIndex]="pageIndex" 
-                                   (page)="onPageChange($event)">
-                    </mat-paginator>
                   </div>
                   
 

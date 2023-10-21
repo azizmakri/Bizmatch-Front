@@ -32,6 +32,7 @@ import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-
 import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
 import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
 import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.component';
+import { ListofPaymentComponent } from './BackOffice/listof-payment/listof-payment.component';
 const routes: Routes = [
   
         {
@@ -139,6 +140,9 @@ const routes: Routes = [
         { path: 'success', component: SucessComponent },
         { path: 'listpaymentuser', component: ListPaymentByUserComponent },
         { path: 'crm', component: FormulaireCrmComponent },
+
+        { path: 'listepayments', component: ListofPaymentComponent },
+
         {
           path:'listeservices',
           component:LisetServiceComponent

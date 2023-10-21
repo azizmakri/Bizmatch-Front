@@ -49,6 +49,7 @@ import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.
 import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
 import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { ListofPaymentComponent } from './BackOffice/listof-payment/listof-payment.component';
 
 
 
@@ -92,7 +93,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
         FormulaireCrmComponent,
         AddServiceComponent,
         DetailServiceComponent,
-        LisetServiceComponent
+        LisetServiceComponent,
+        ListofPaymentComponent
   ],
   imports: [
     BrowserModule,
