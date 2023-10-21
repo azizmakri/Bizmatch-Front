@@ -43,7 +43,7 @@
 <div class="mb-4 d-flex flex-column gap-3 align-items-center justify-content-center">
     <!-- Display the uploaded image or a placeholder if none -->
     <div class="user-change-photo shadow">
-      <img *ngIf="previewImage; else placeholder" [src]="previewImage" class="img-thumbnail" style="max-width: 110px;">
+      <img *ngIf="previewImage; else placeholder" [src]="previewImage" alt="{{ user.image }}" class="img-thumbnail" >
       <ng-template #placeholder>
           <img *ngIf="user" [src]="'assets/images/' + getImageFileName(user.image)" alt="{{ user.image }}">        
       </ng-template>

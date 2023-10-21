@@ -24,9 +24,7 @@ export class EditProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('user') || '{}');
-    if (this.user && this.user.image) {
-      this.previewImage = 'assets/images/' + this.getImageFileName(this.user.image);
-  }
+    this.previewImage = this.user.image;
   }
 
   updateUser(): void {
