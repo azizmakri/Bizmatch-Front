@@ -11,6 +11,7 @@ export class User {
   aboutMe!: string;
   location!: string;
   Domaines!: string;
+  image!: string;
   userEmail!: string;
   roleDemander!: string;
   role!: Role[];

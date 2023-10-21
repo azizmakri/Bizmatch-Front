@@ -191,10 +191,13 @@
                                     <div class="swiper-slide" *ngFor="let user of users">
                                         <div class="game-card">
                                             <div class="game-card__box">
-                                                <div class="game-card__media"><a href="10_game-profile.html"><img src="assets/img/societe8.jpg" alt="Kill of Democracy" /></a></div>
+                                                <img [src]="user.image" alt="{{ user.image }}">
+
+                                                
                                                 <div class="game-card__info"><a class="game-card__title" href="10_game-profile.html">{{ user.userFirstName }} {{ user.userLastName }} </a>
                                                     <div class="game-card__genre">{{ user.roleDemander }}</div>
-                                                    <button class="uk-button-danger">Send Partnership</button>
+                                                    <button class="uk-button-danger"(click)="addPartnershipRequest(user.userName)"
+                                                    [disabled]="sentRequests[user.userName]">{{ sentRequests[user.userName] ? 'Request Sent' : 'Send Request' }}</button>
                                                     <div class="game-card__rating-and-price">
                                                         <div class="game-card__rating"><span>4.1</span><i class="ico_star"></i></div>                                                    </div>
                                                     <div class="game-card__bottom">

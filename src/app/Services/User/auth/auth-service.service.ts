@@ -78,7 +78,8 @@ export class AuthServiceService {
             Domaines: response.user.Domaines,
             userEmail: response.user.userEmail, // Adjust these property names
             role: response.user.role, // Adjust this based on the actual structure of your response
-            roleDemander: response.user.roleDemander
+            roleDemander: response.user.roleDemander,
+            image: response.user.image
           };
        
 

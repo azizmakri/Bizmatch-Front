@@ -58,6 +58,10 @@ acceptPartnership(userName: string, partnerRequestToAcceptUserName: string): Obs
   return this.http.post<void>(`${this.baseUrl}/partenairesPotentiels/acceptPartnership/${userName}/${partnerRequestToAcceptUserName}`, {});
 }
 
+addPartnershipRequest(userName: string, desiredPartnerUserName: string): Observable<void> {
+  return this.http.post<void>(`${this.baseUrl}/partenairesPotentiels/addPartnershipRequest/${userName}/${desiredPartnerUserName}`, {});
+}
+
 }
 
 export interface User {
@@ -69,6 +73,7 @@ export interface User {
   linkedIn: string;
   siteWeb: string;
   aboutMe: string;
+  image: string;
   location: string;
   Domaines: string;
   userEmail:string;
