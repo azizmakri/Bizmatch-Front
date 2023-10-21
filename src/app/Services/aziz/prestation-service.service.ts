@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ServiceFournisseur } from './Models/ServiceFournisseur';
-import { Room } from './Models/Room';
-import { CommentRoom } from './Models/CommentRoom';
+import { ServiceFournisseur } from '../../Models/ServiceFournisseur';
+import { Room } from '../../Models/Room';
+import { CommentRoom } from '../../Models/CommentRoom';
 
 @Injectable({
   providedIn: 'root'

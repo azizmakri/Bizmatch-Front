@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommentRoom } from 'src/app/Models/CommentRoom';
 import { Room } from 'src/app/Models/Room';
-import { PrestationServiceService } from 'src/app/prestation-service.service';
+import { PrestationServiceService } from 'src/app/Services/aziz/prestation-service.service';
 
 @Component({
   selector: 'app-list-comments',

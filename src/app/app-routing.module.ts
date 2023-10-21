@@ -11,7 +11,7 @@ import { StoreComponent } from './FrontOffice/store/store.component';
 import { FriendsComponent } from './FrontOffice/friends/friends.component';
 import { ChatComponent } from './FrontOffice/chat/chat.component';
 import { StreamsComponent } from './FrontOffice/streams/streams.component';
-import { CommunityComponent } from './FrontOffice/community/community.component';
+import { CommunityComponent } from './FrontOffice/eya/community/community.component';
 import { CheckmailComponent } from './FrontOffice/checkmail/checkmail.component';
 import { ResetpasswordComponent } from './FrontOffice/resetpassword/resetpassword.component';
 import { UsersComponent } from './BackOffice/users/users.component';
@@ -34,6 +34,9 @@ import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail
 import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.component';
 import { ListRoomsComponent } from './FrontOffice/pato/list-rooms/list-rooms.component';
 import { ListCommentsComponent } from './FrontOffice/pato/list-comments/list-comments.component';
+import { DatailsMarcheComponent } from './FrontOffice/eya/datails-marche/datails-marche.component';
+import { AddBesoinComponent } from './FrontOffice/eya/add-besoin/add-besoin.component';
+import { DetailsBesoinComponent } from './FrontOffice/eya/details-besoin/details-besoin.component';
 const routes: Routes = [
   
         {
@@ -60,6 +63,18 @@ const routes: Routes = [
         {
           path:'comminity',
           component:CommunityComponent
+        },
+        {
+          path:'addbesoin',
+          component:AddBesoinComponent
+        },
+        {
+          path:'detailsmarche/:id',
+          component:DatailsMarcheComponent
+        },
+        {
+          path:'detailbesoin/:id',
+          component:DetailsBesoinComponent
         },
         {
           path:'favourite',

@@ -1,0 +1,70 @@
+
+<body class="page-store">
+
+    <!-- Loader-->
+    
+    <!-- Loader end-->
+
+
+    <div class="page-wrapper">
+            <app-header></app-header>
+        <div class="page-content">
+            <aside class="sidebar is-show" id="sidebar">
+                <app-sidebarfront></app-sidebarfront>
+            </aside>
+          
+            <main class="page-main">
+                <ul class="uk-breadcrumb">
+                    <li><a [routerLink]="['/comminity']"><span data-uk-icon="chevron-left"></span><span>Retour</span></a></li>
+                    <li><span>{{marcheF.nom}}</span></li>
+                </ul>
+                <h3 class="uk-text-lead">{{marcheF.nom}}</h3>
+                <div class="uk-grid uk-grid-small" data-uk-grid>
+                    <div class="uk-width-2-3@s">
+                        <div class="game-profile-card">
+                            <div class="game-profile-card__intro"><span>Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée.</span></div>
+                            <ul class="game-profile-card__list">
+                                <li>
+                                    <div>Score:</div>
+                                    <div>{{marcheF.score}}</div>
+                                </li>
+                                <li>
+                                    <div>Taille:</div>
+                                    <div>{{marcheF.taille}}</div>
+                                </li>
+                                <li>
+                                    <div>Rentabilité:</div>
+                                    <div>{{ marcheF.rentabilite }}</div>
+                                </li>
+                                <li>
+                                    <div>Platforms:</div>
+                                    <div class="game-card__platform"><i class="ico_windows"></i><i class="ico_apple"></i></div>
+                                </li>
+                            </ul>
+                            <ul class="game-profile-card__type">
+                                <li><span>Strategy</span></li>
+                                <li><span>Survival</span></li>
+                                <li><span>City Builder</span></li>
+                                <li><span>Dark</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="uk-width-1-3@s">
+                        <form>
+                        <div class="game-profile-price">
+                            <h3 class="uk-text-lead">CroissancePrevue</h3>
+                            <div class="game-profile-price__value">{{ marcheF.croissancePrevue }}</div>
+                            
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                <app-footer></app-footer> 
+            </main>
+        </div>
+    </div>
+    <app-modals></app-modals>
+    <script src="assets/js/libs.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+

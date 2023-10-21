@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceFournisseur } from 'src/app/Models/ServiceFournisseur';
 import { AuthServiceService } from 'src/app/Services/User/auth/auth-service.service';
-import { PrestationServiceService } from 'src/app/prestation-service.service';
+import { PrestationServiceService } from 'src/app/Services/aziz/prestation-service.service';
 
 @Component({
   selector: 'app-liset-service',

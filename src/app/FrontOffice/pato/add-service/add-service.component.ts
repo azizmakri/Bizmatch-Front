@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ServiceFournisseur } from 'src/app/Models/ServiceFournisseur';
-import { PrestationServiceService } from 'src/app/prestation-service.service';
+import { PrestationServiceService } from 'src/app/Services/aziz/prestation-service.service';
 
 @Component({
   selector: 'app-add-service',

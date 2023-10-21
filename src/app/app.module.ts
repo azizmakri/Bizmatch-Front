@@ -17,7 +17,7 @@ import { FriendsComponent } from './FrontOffice/friends/friends.component';
 import { StoreComponent } from './FrontOffice/store/store.component';
 import { UsergroupComponent } from './FrontOffice/usergroup/usergroup.component';
 import { StreamsComponent } from './FrontOffice/streams/streams.component';
-import { CommunityComponent } from './FrontOffice/community/community.component';
+import { CommunityComponent } from './FrontOffice/eya/community/community.component';
 import { AuthServiceService } from './Services/User/auth/auth-service.service';
 import { CheckmailComponent } from './FrontOffice/checkmail/checkmail.component';
 import { ResetpasswordComponent } from './FrontOffice/resetpassword/resetpassword.component';
@@ -51,6 +51,9 @@ import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-se
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ListRoomsComponent } from './FrontOffice/pato/list-rooms/list-rooms.component';
 import { ListCommentsComponent } from './FrontOffice/pato/list-comments/list-comments.component';
+import { DatailsMarcheComponent } from './FrontOffice/eya/datails-marche/datails-marche.component';
+import { AddBesoinComponent } from './FrontOffice/eya/add-besoin/add-besoin.component';
+import { DetailsBesoinComponent } from './FrontOffice/eya/details-besoin/details-besoin.component';
 
 
 
@@ -96,7 +99,10 @@ import { ListCommentsComponent } from './FrontOffice/pato/list-comments/list-com
         DetailServiceComponent,
         LisetServiceComponent,
         ListRoomsComponent,
-        ListCommentsComponent
+        ListCommentsComponent,
+        DatailsMarcheComponent,
+        AddBesoinComponent,
+        DetailsBesoinComponent
   ],
   imports: [
     BrowserModule,

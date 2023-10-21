@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceFournisseur } from 'src/app/Models/ServiceFournisseur';
-import { PrestationServiceService } from 'src/app/prestation-service.service';
+import { PrestationServiceService } from 'src/app/Services/aziz/prestation-service.service';
 import { HttpClient } from '@angular/common/http';
 import { loadStripe } from '@stripe/stripe-js';
 import { environment } from 'src/environments/environment';
