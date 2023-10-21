@@ -9,9 +9,7 @@ import { catchError, throwError } from 'rxjs';
 })
 export class ObjectifService {
   httpOptions = {
-    headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + localStorage.getItem('jwtToken')
-    })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
 url = 'http://localhost:8083/DevBusiness/objectif';
 OBJECTIFSCOMMERCIALS: any[] = [];

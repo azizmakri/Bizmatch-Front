@@ -8,9 +8,7 @@ import { Contenu } from 'src/app/Model/Contenu';
 })
 export class ContenuService {
   httpOptions = {
-    headers: new HttpHeaders({
-        'Authorization': 'Bearer ' + localStorage.getItem('jwtToken')
-    })
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
  url = 'http://localhost:8083/marketing/contenu';
 
