@@ -11,12 +11,22 @@ import { PrestationServiceService } from 'src/app/prestation-service.service';
 export class AddServiceComponent {
 
   public service: ServiceFournisseur = new ServiceFournisseur();
-  public username: string = 'amir1999'; 
+  userName!: string;
 
-  constructor(private serviceService: PrestationServiceService,private router: Router) {} // Update 'yourServiceName' with the actual service name
+  constructor(private serviceService: PrestationServiceService,private router: Router) {
+    this.getUserNameFromLocalStorage();  // Invoke the method to set the userName
+
+  } // Update 'yourServiceName' with the actual service name
+  getUserNameFromLocalStorage(): void {
+    const userJSON = localStorage.getItem('user');
+    if (userJSON) {
+      const userObj = JSON.parse(userJSON);
+      this.userName = userObj.userName;
+    }
+  }
 
   onSubmit() {
-    this.serviceService.addService(this.service, this.username).subscribe(response => {
+    this.serviceService.addService(this.service, this.userName).subscribe(response => {
       console.log('Service added successfully', response);
       // Do something after successful service addition, e.g., navigate to another page
     }, error => {

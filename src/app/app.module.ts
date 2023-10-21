@@ -45,9 +45,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { CheckoutComponent } from './FrontOffice/checkout/checkout.component';
 import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/list-payment-by-user.component';
 import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
-import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.component';
-import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
-import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ListofPaymentComponent } from './BackOffice/listof-payment/listof-payment.component';
 import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/ajouter-event/ajouter-event.component';
@@ -63,6 +60,14 @@ import { ContenuDetailsComponent } from './FrontOffice/aicha/contenu-details/con
 import { ObjectifdetailsComponent } from './FrontOffice/aicha/objectifdetails/objectifdetails.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.component';
+import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
+import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
+import { ListCommentsComponent } from './FrontOffice/pato/list-comments/list-comments.component';
+import { ListRoomsComponent } from './FrontOffice/pato/list-rooms/list-rooms.component';
+import { AddBesionComponent } from './FrontOffice/eya/add-besion/add-besion.component';
+import { DatailsMarcheComponent } from './FrontOffice/eya/datails-marche/datails-marche.component';
+import { DetailsBesionComponent } from './FrontOffice/eya/details-besion/details-besion.component';
 
 
 
@@ -89,8 +94,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     UsersComponent,
     FooterComponent,
     MarketComponent,
-
-
     SidebarComponent,
         TopHeaderComponent,
         ToDoComponent,
@@ -104,9 +107,6 @@ import { MatDialogModule } from '@angular/material/dialog';
         CheckoutComponent,
         ListPaymentByUserComponent,
         FormulaireCrmComponent,
-        AddServiceComponent,
-        DetailServiceComponent,
-        LisetServiceComponent,
         ListofPaymentComponent,
         AjouterEventComponent,
         ListEvenementsComponent,
@@ -118,7 +118,16 @@ import { MatDialogModule } from '@angular/material/dialog';
         ContenuComponent,
         ContenuAddComponent,
         ContenuDetailsComponent,
-        ObjectifdetailsComponent
+        ObjectifdetailsComponent,
+        AddServiceComponent,
+        DetailServiceComponent,
+        LisetServiceComponent,
+        ListCommentsComponent,
+        ListRoomsComponent,
+        AddBesionComponent,
+        DatailsMarcheComponent,
+        DetailsBesionComponent,
+        
   ],
   imports: [
     BrowserModule,

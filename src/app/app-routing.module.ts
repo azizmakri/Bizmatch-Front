@@ -43,6 +43,11 @@ import { ContenuComponent } from './FrontOffice/aicha/contenu/contenu.component'
 import { ContenuDetailsComponent } from './FrontOffice/aicha/contenu-details/contenu-details.component';
 import { ContenuAddComponent } from './FrontOffice/aicha/contenu-add/contenu-add.component';
 import { ObjectifdetailsComponent } from './FrontOffice/aicha/objectifdetails/objectifdetails.component';
+import { ListRoomsComponent } from './FrontOffice/pato/list-rooms/list-rooms.component';
+import { ListCommentsComponent } from './FrontOffice/pato/list-comments/list-comments.component';
+import { AddBesionComponent } from './FrontOffice/eya/add-besion/add-besion.component';
+import { DatailsMarcheComponent } from './FrontOffice/eya/datails-marche/datails-marche.component';
+import { DetailsBesionComponent } from './FrontOffice/eya/details-besion/details-besion.component';
 const routes: Routes = [
   
         {
@@ -66,10 +71,7 @@ const routes: Routes = [
           path:'resetpassword',
           component:ResetpasswordComponent
         },
-        {
-          path:'comminity',
-          component:CommunityComponent
-        },
+        
         {
           path:'favourite',
           component:FavouritesComponent
@@ -166,6 +168,32 @@ const routes: Routes = [
           component:AddServiceComponent
         }
         ,
+        {
+          path:'listrooms',
+          component:ListRoomsComponent
+        }
+        ,{path:'comments/:id',
+        component:ListCommentsComponent
+        } 
+        ,
+        {
+          path:'comminity',
+          component:CommunityComponent
+        },
+        {
+          path:'addbesoin',
+          component:AddBesionComponent
+        },
+        {
+          path:'detailsmarche/:id',
+          component:DatailsMarcheComponent
+        },
+        {
+          path:'detailbesoin/:id',
+          component:DetailsBesionComponent
+        }
+        ,
+        
         /**routes GestionEvenement */
 { path: 'Evenements', component: ListEvenementsComponent },
 { path: 'AjouterEvent', component: AjouterEventComponent },
