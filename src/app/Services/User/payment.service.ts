@@ -16,4 +16,10 @@ export class PaymentService {
     const url = `http://localhost:8888/payment/payments?userName=${userName}`;
     return this.http.get<any>(url);
   }
+
+
+  getAllPayments(): Observable<any> {
+    const url = `http://localhost:8888/payment/getall`;
+    return this.http.get<any>(url);
+  }
 }

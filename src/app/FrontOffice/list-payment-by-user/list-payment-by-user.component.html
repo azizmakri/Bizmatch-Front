@@ -26,6 +26,11 @@
             </aside>
           
             <main class="page-main">
+              <ul class="uk-breadcrumb">
+                <li><a href="/home"><span data-uk-icon="chevron-left"></span><span>Retour</span></a></li>
+                <li><span>payment Lists</span></li>
+            </ul>
+
                 <h1>payment Lists</h1>
 
                 <div class="table-responsive mt-3">
@@ -44,7 +49,7 @@
                           <td>{{ i + 1 + pageIndex * pageSize }}</td> 
                           <td>{{ payment.name }}</td>
                           <td>{{ payment.amount }}</td>
-                          <td [ngClass]="{'green-background': payment.paymentStatus === 'payment successful'}">{{ payment.paymentStatus }}</td>
+                          <td><span class="badge bg-light-success text-success w-100">{{ payment.paymentStatus }}</span></td>
 
                           <td>
                             <div class="table-actions d-flex align-items-center gap-3 fs-6">
@@ -63,11 +68,6 @@
                         </tr>
                       </tbody>
                     </table>
-                    <mat-paginator [length]="length" 
-                                   [pageSize]="pageSize" 
-                                   [pageIndex]="pageIndex" 
-                                   (page)="onPageChange($event)">
-                    </mat-paginator>
                   </div>
                   
 

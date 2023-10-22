@@ -37,14 +37,28 @@
         <div class="col-lg-8 mx-auto">
           <div class="card radius-10">
             <div class="card-body">
-              <form (ngSubmit)="updateUser()">
+              <form (ngSubmit)="updateUserWithImage()">
+                
                 <h5 class="mb-3">Edit Profile</h5>
-                <div class="mb-4 d-flex flex-column gap-3 align-items-center justify-content-center">
-                  <div class="user-change-photo shadow">
-                    <img src="https://via.placeholder.com/110X110/212529/fff" alt="...">
-                  </div>
-                  <button type="button" class="btn btn-outline-dark btn-sm radius-30 px-4"><ion-icon name="image-sharp"></ion-icon>Change Photo</button>
-                </div>
+<div class="mb-4 d-flex flex-column gap-3 align-items-center justify-content-center">
+    <!-- Display the uploaded image or a placeholder if none -->
+    <div class="user-change-photo shadow">
+      <img *ngIf="previewImage; else placeholder" [src]="previewImage" alt="{{ user.image }}" class="img-thumbnail" >
+      <ng-template #placeholder>
+          <img *ngIf="user" [src]="'assets/images/' + getImageFileName(user.image)" alt="{{ user.image }}">        
+      </ng-template>
+  </div>
+    <!-- Button to trigger the file input -->
+    <button type="button" class="btn btn-outline-dark btn-sm radius-30 px-4" (click)="fileInput.click()">
+        <ion-icon name="image-sharp"></ion-icon> Change Photo
+    </button>
+    <!-- Hidden file input to select image -->
+    <input class="form-control" id="formFile" type="file" name="image" (change)="onFileSelected($event)" style="display: none;" #fileInput>
+    <div class="alert alert-danger" *ngIf="imageInvalid">
+        La image est obligatoire
+    </div>
+</div>
+
                 <h5 class="mb-0 mt-4">User Information</h5>
                 <hr>
                 <div class="row g-3">
@@ -70,23 +84,8 @@
                     <label class="form-label">Email</label>
                     <input type="text" class="form-control" [(ngModel)]="user.userEmail" name="userEmail" disabled="true">
                   </div>
-                  <div class="col-6">
-                    <label class="form-label">Domaines</label>
-                    <select class="form-control" [(ngModel)]="user.Domaines" name="Domaines">
-                      <option value="InformatiqueEtTechnologie">Informatique et Technologie</option>
-                      <option value="FinanceEtInvestissement">Finance et Investissement</option>
-                      <option value="MarketingEtCommunication">Marketing et Communication</option>
-                      <option value="sante">Santé</option>
-                      <option value="EnergieEtEnvironnement">Énergie et Environnement</option>
-                      <option value="IndustrieEtManufacture">Industrie et Manufacture</option>
-                      <option value="EducationEtFormation">Éducation et Formation</option>
-                      <option value="LoisirsEtTourisme">Loisirs et Tourisme</option>
-                      <option value="Immobilier">Immobilier</option>
-                      <option value="ServicesJuridiques">Services Juridiques</option>
-                      <option value="ArtEtCulture">Art et Culture</option>
-                      <option value="Autre">Autre</option>
-                    </select>
-                  </div>
+                  
+        
                   <div class="col-6">
                     <label class="form-label">Fb</label>
                     <input type="text" class="form-control" [(ngModel)]="user.facebook" name="facebook">

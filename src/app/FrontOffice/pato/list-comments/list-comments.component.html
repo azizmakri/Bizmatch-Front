@@ -21,13 +21,13 @@
                             <div  class="chat-messages-body" style="max-height: 370px; overflow-y: auto;">
                             <div *ngFor="let commenta of room?.commentRoomList" class="chat-messages-body">
                                 <!-- Check if the comment is yours -->
-                                <ng-container *ngIf="commenta?.commentUserId===userconnecte">
+                                <ng-container *ngIf="commenta?.commentUserId===userName">
                                     <div class="messages-item --your-message">
                                         <div class="messages-item__text">{{ commenta?.descriptionComment }}</div>
                                     </div>
                                 </ng-container>
                                 <!-- Check if the comment is from your friend -->
-                                <ng-container *ngIf="!(commenta?.commentUserId===userconnecte)">
+                                <ng-container *ngIf="!(commenta?.commentUserId===userName)">
                                     <div class="messages-item --friend-message">
                                         <div class="messages-item__text">{{ commenta?.descriptionComment }}</div>
                                     </div>

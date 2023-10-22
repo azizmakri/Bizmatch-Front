@@ -1,0 +1,84 @@
+<!-- modifier-evenement.component.html -->
+<div class="wrapper">
+    <app-sidebar></app-sidebar>
+    <app-top-header></app-top-header>
+    <div class="page-content-wrapper">
+      <div class="page-content">
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+          <div class="breadcrumb-title pe-3">Evenement</div>
+          <div class="ps-3">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb mb-0 p-0 align-items-center">
+                <li class="breadcrumb-item"><a href="javascript:;"><ion-icon name="home-outline"></ion-icon></a></li>
+                <li class="breadcrumb-item active" aria-current="page">Modifier Evenement</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="ms-auto">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-primary">Settings</button>
+              <button type="button" class="btn btn-outline-primary split-bg-primary dropdown-toggle dropdown-toggle-split"
+                data-bs-toggle="dropdown">
+                <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">
+                <a class="dropdown-item" href="javascript:;">Action</a>
+                <a class="dropdown-item" href="javascript:;">Another action</a>
+                <a class="dropdown-item" href="javascript:;">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="javascript:;">Separated link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <h5 class="mb-0">Modifier Evenement</h5>
+            </div>
+            <br>
+            <form #form="ngForm" (ngSubmit)="updateEvent()">
+              <div class="mb-3">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="evenementForm.value.nom" required>
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description"
+                  [(ngModel)]="evenementForm.value.description"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="dateDebut" class="form-label">Date de Début</label>
+                <input type="text" class="form-control" id="dateDebut" name="dateDebut"
+                  [(ngModel)]="evenementForm.value.dateDebut" required>
+                <small class="form-text text-muted">Format attendu : JJ/MM/AAAA</small>
+              </div>
+              <div class="mb-3">
+                <label for="dateFin" class="form-label">Date Fin</label>
+                <input type="text" class="form-control" id="dateFin" name="dateFin"
+                  [(ngModel)]="evenementForm.value.dateFin" required>
+                <small class="form-text text-muted">Format attendu : JJ/MM/AAAA</small>
+              </div>
+              <div class="form-group">
+                <label>Image</label>
+                <input type="file" name="image" class="form-control" (change)="onFileSelected($event)">
+                <!-- Afficher l'image actuelle ici s'il y en a une -->
+                            <img [src]="'assets/images/'+getImageFileName(evenement.imagePath)" width="80" height="80">
+              </div>
+              <div class="form-group">
+                <label>Lieu</label>
+                <input type="text" class="form-control" id="lieu" name="lieu" [(ngModel)]="evenementForm.value.lieu">
+              </div>
+              <div class="form-group">
+                <label>Nombre de Participants</label>
+                <input type="number" class="form-control" id="nombreParticipants" name="nombreParticipants"
+                  [(ngModel)]="evenementForm.value.nombreParticipants">
+              </div>
+              <button type="submit" class="btn btn-primary">Modifier</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

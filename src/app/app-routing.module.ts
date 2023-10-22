@@ -10,8 +10,8 @@ import { UsergroupComponent } from './FrontOffice/usergroup/usergroup.component'
 import { StoreComponent } from './FrontOffice/store/store.component';
 import { FriendsComponent } from './FrontOffice/friends/friends.component';
 import { ChatComponent } from './FrontOffice/chat/chat.component';
-import { StreamsComponent } from './FrontOffice/streams/streams.component';
-import { CommunityComponent } from './FrontOffice/eya/community/community.component';
+import { StreamsComponent } from './FrontOffice/gestionEvenementConference/streams/streams.component';
+import { CommunityComponent } from './FrontOffice/community/community.component';
 import { CheckmailComponent } from './FrontOffice/checkmail/checkmail.component';
 import { ResetpasswordComponent } from './FrontOffice/resetpassword/resetpassword.component';
 import { UsersComponent } from './BackOffice/users/users.component';
@@ -32,11 +32,22 @@ import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-
 import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
 import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
 import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.component';
+import { ListofPaymentComponent } from './BackOffice/listof-payment/listof-payment.component';
+import { ListEvenementsComponent } from './BackOffice/gestionEvenementConference/list-evenements/list-evenements.component';
+import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/ajouter-event/ajouter-event.component';
+import { ModifierEventComponent } from './BackOffice/gestionEvenementConference/modifier-event/modifier-event.component';
+import { ListFavorisComponent } from './FrontOffice/gestionEvenementConference/list-favoris/list-favoris.component';
+import { DetailEvenementComponent } from './FrontOffice/gestionEvenementConference/detail-evenement/detail-evenement.component';
+import { CampagneComponent } from './FrontOffice/aicha/campagne/campagne.component';
+import { ContenuComponent } from './FrontOffice/aicha/contenu/contenu.component';
+import { ContenuDetailsComponent } from './FrontOffice/aicha/contenu-details/contenu-details.component';
+import { ContenuAddComponent } from './FrontOffice/aicha/contenu-add/contenu-add.component';
+import { ObjectifdetailsComponent } from './FrontOffice/aicha/objectifdetails/objectifdetails.component';
 import { ListRoomsComponent } from './FrontOffice/pato/list-rooms/list-rooms.component';
 import { ListCommentsComponent } from './FrontOffice/pato/list-comments/list-comments.component';
+import { AddBesionComponent } from './FrontOffice/eya/add-besion/add-besion.component';
 import { DatailsMarcheComponent } from './FrontOffice/eya/datails-marche/datails-marche.component';
-import { AddBesoinComponent } from './FrontOffice/eya/add-besoin/add-besoin.component';
-import { DetailsBesoinComponent } from './FrontOffice/eya/details-besoin/details-besoin.component';
+import { DetailsBesionComponent } from './FrontOffice/eya/details-besion/details-besion.component';
 const routes: Routes = [
   
         {
@@ -60,22 +71,7 @@ const routes: Routes = [
           path:'resetpassword',
           component:ResetpasswordComponent
         },
-        {
-          path:'comminity',
-          component:CommunityComponent
-        },
-        {
-          path:'addbesoin',
-          component:AddBesoinComponent
-        },
-        {
-          path:'detailsmarche/:id',
-          component:DatailsMarcheComponent
-        },
-        {
-          path:'detailbesoin/:id',
-          component:DetailsBesoinComponent
-        },
+        
         {
           path:'favourite',
           component:FavouritesComponent
@@ -156,6 +152,9 @@ const routes: Routes = [
         { path: 'success', component: SucessComponent },
         { path: 'listpaymentuser', component: ListPaymentByUserComponent },
         { path: 'crm', component: FormulaireCrmComponent },
+
+        { path: 'listepayments', component: ListofPaymentComponent },
+
         {
           path:'listeservices',
           component:LisetServiceComponent
@@ -168,14 +167,66 @@ const routes: Routes = [
           path:'addservice',
           component:AddServiceComponent
         }
-        ,{
+        ,
+        {
           path:'listrooms',
           component:ListRoomsComponent
         }
         ,{path:'comments/:id',
         component:ListCommentsComponent
-     } 
+        } 
         ,
+        {
+          path:'comminity',
+          component:CommunityComponent
+        },
+        {
+          path:'addbesoin',
+          component:AddBesionComponent
+        },
+        {
+          path:'detailsmarche/:id',
+          component:DatailsMarcheComponent
+        },
+        {
+          path:'detailbesoin/:id',
+          component:DetailsBesionComponent
+        }
+        ,
+        
+        /**routes GestionEvenement */
+{ path: 'Evenements', component: ListEvenementsComponent },
+{ path: 'AjouterEvent', component: AjouterEventComponent },
+{
+  path: 'ModifierEvenement/:id', // Utilisez le nom de chemin souhaité
+  component: ModifierEventComponent,
+ 
+},
+ { path: 'ListFavoris', // Utilisez le nom de chemin souhaité
+ component: ListFavorisComponent,
+ },
+ { path: 'DetailEvenement/:id', // Utilisez le nom de chemin souhaité
+ component: DetailEvenementComponent,
+ }
+/**End  */
+
+,{
+  path:'campagneMarketing',
+  component:CampagneComponent
+} 
+,{path:'contenu/:id',
+ component:ContenuComponent
+} ,
+
+{path:'contenuDetails/:id',
+ component:ContenuDetailsComponent
+},{
+path:'contenuAdd',
+component:ContenuAddComponent
+},
+{path:'objectifDetails/:id',
+component:ObjectifdetailsComponent
+},
 
 
 

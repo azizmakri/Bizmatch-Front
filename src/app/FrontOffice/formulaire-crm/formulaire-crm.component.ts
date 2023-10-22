@@ -12,12 +12,22 @@ export class FormulaireCrmComponent {
     description: '',
     service: ''
   };
+  userName!: string;  // Modified this line to use the value from local storage
 
-  constructor(private formulaireService: CrmService) { }
+  constructor(private formulaireService: CrmService) { 
+    this.getUserNameFromLocalStorage();  // Invoke the method to set the userName
 
+  }
+  getUserNameFromLocalStorage(): void {
+    const userJSON = localStorage.getItem('user');
+    if (userJSON) {
+      const userObj = JSON.parse(userJSON);
+      this.userName = userObj.userName;
+    }
+  }
 
-  onSubmit(): void {
-    this.formulaireService.createFormulaire(this.formulaire).subscribe(
+   onSubmit(): void {
+    this.formulaireService.createFormulaire(this.formulaire, this.userName).subscribe(
       response => {
         console.log(response);
         alert('Formulaire created successfully!');
@@ -27,6 +37,8 @@ export class FormulaireCrmComponent {
       }
     );
   }
+
+
   clearForm(): void {
     this.formulaire = {
       titre: '',

@@ -1,0 +1,129 @@
+<body class="page-favourites">
+
+
+    <div class="page-wrapper">
+        <app-header></app-header>
+        <div class="page-content">
+            <aside class="sidebar is-show" id="sidebar">
+                <app-sidebarfront></app-sidebarfront>
+            </aside>
+          
+            <main class="page-main">
+             <h4 class="uk-text-lead">Add Marketing Content</h4>
+          <style>
+ .flex-container {
+ display: flex;
+ justify-content: space-between;
+ gap: 20px; /* Espacement entre les éléments */
+ }
+ .flex-item {
+ flex: 1; /* Chaque élément prend la même largeur */
+ }
+          </style>
+ 
+    <div class="container">
+         <form #f="ngForm" enctype="multipart/form-data">
+          <p></p>
+          <div class="card">
+             <div class="card-body">  
+                <div class="form-group">
+                       <h6 class="mb-0 text-uppercase">Image Upload</h6>
+                          <hr/>
+                          <div class="mb-3">
+                             </div>
+                             <input class="form-control"  id="formFile" type="file" name="image" (change)="onFileSelected($event)" >
+                             <div class="alert alert-danger" *ngIf="imageInvalid">
+                               La image est obligatoire
+                         </div>
+                         <img *ngIf="previewImage" [src]="previewImage" class="img-thumbnail" style="max-width: 200px;">
+                      
+                      </div>
+             
+                            
+                            <!--end row-->
+                   <div class="form-group">
+                   
+                         <h6 class="mb-0 text-uppercase">titre</h6>
+                         <hr/>
+                         
+                   <input type="text" name="titre" class="form-control" [(ngModel)]="contenu.titre" required minlength="3">
+                   </div>
+ 
+ 
+ 
+                   <div class="form-group">
+ 
+                         <h6 class="mb-0 text-uppercase">Description</h6>
+                         <hr/>
+ 
+                   <textarea name="description" class="form-control" [(ngModel)]="contenu.description"  required></textarea>
+ 
+                   </div>
+ 
+ 
+                 <!-- Comment out or remove this section
+ <div class="form-group">
+   <h6 class="mb-0 text-uppercase">Date création</h6>
+   <hr/>
+   <input type="date" name="dateDebut" class="form-control" [(ngModel)]="contenu.dateCreation"  required>
+ </div>
+ -->
+                   <div class="form-group">
+                         <h6 class="mb-0 text-uppercase">Lien</h6>
+                         <hr/>
+                            <div class="input-group mb-3"> <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                               <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="lien" [(ngModel)]="contenu.lien">
+                            </div>
+                   </div>
+ 
+                   <div class="form-group">
+ 
+                         <h6 class="mb-0 text-uppercase">Type</h6>
+                         <hr/>
+                            <div class="input-group mb-3">
+                               <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                               <select class="form-select" id="inputGroupSelect01" name="type" [(ngModel)]="contenu.type">
+                               <option selected="">Choose content type...</option>
+                               <option value="1">IMAGE</option>
+                               <option value="2">VIDEO</option>
+                               <option value="3">TEXTE</option>
+                               </select>
+                            </div>
+ 
+                   </div>
+                
+                   <div class="form-group">
+                      <h6 class="mb-0 text-uppercase">Select Campaign</h6>
+                      <hr/>
+                      <div class="input-group mb-3">
+                          <label class="input-group-text" for="campagneSelect">Campaigns</label>
+                          <select class="form-select" id="campagneSelect" name="campagneSelect" [(ngModel)]="contenu.campagneMarketingId"  required>
+                              <option selected="" value="">Select a campaign...</option>
+                              <option *ngFor="let campagne of campagnesMarketing" [value]="campagne.id">{{ campagne.id }}</option>
+                          </select>
+                      </div>
+                  </div>
+ 
+                   <div class="form-group" class="col-12">
+                      <div class="d-grid">
+                        <button type="button" class="btn btn-primary"  [disabled]="f.invalid || imageInvalid" (click)="save()">Add Content</button>
+                      </div>
+                   </div>
+                   
+ </div>
+ </div>
+ 
+         </form>
+    </div> 
+ 
+    
+   </main>
+                 
+ </div>
+ </div>
+ 
+ <app-modals></app-modals>
+ 
+ <script src="assets/js/libs.js"></script>
+ <script src="assets/js/main.js"></script>
+ </body>

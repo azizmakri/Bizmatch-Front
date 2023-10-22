@@ -16,8 +16,8 @@ import { ChatComponent } from './FrontOffice/chat/chat.component';
 import { FriendsComponent } from './FrontOffice/friends/friends.component';
 import { StoreComponent } from './FrontOffice/store/store.component';
 import { UsergroupComponent } from './FrontOffice/usergroup/usergroup.component';
-import { StreamsComponent } from './FrontOffice/streams/streams.component';
-import { CommunityComponent } from './FrontOffice/eya/community/community.component';
+import { StreamsComponent } from './FrontOffice/gestionEvenementConference/streams/streams.component';
+import { CommunityComponent } from './FrontOffice/community/community.component';
 import { AuthServiceService } from './Services/User/auth/auth-service.service';
 import { CheckmailComponent } from './FrontOffice/checkmail/checkmail.component';
 import { ResetpasswordComponent } from './FrontOffice/resetpassword/resetpassword.component';
@@ -45,15 +45,29 @@ import { MatButtonModule } from '@angular/material/button';
 import { CheckoutComponent } from './FrontOffice/checkout/checkout.component';
 import { ListPaymentByUserComponent } from './FrontOffice/list-payment-by-user/list-payment-by-user.component';
 import { FormulaireCrmComponent } from './FrontOffice/formulaire-crm/formulaire-crm.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { ListofPaymentComponent } from './BackOffice/listof-payment/listof-payment.component';
+import { AjouterEventComponent } from './BackOffice/gestionEvenementConference/ajouter-event/ajouter-event.component';
+import { ListEvenementsComponent } from './BackOffice/gestionEvenementConference/list-evenements/list-evenements.component';
+import { ModifierEventComponent } from './BackOffice/gestionEvenementConference/modifier-event/modifier-event.component';
+import { DetailEvenementComponent } from './FrontOffice/gestionEvenementConference/detail-evenement/detail-evenement.component';
+import { ListFavorisComponent } from './FrontOffice/gestionEvenementConference/list-favoris/list-favoris.component';
+import { CampagneComponent } from './FrontOffice/aicha/campagne/campagne.component';
+import { CampagneEditComponent } from './FrontOffice/aicha/campagne-edit/campagne-edit.component';
+import { ContenuComponent } from './FrontOffice/aicha/contenu/contenu.component';
+import { ContenuAddComponent } from './FrontOffice/aicha/contenu-add/contenu-add.component';
+import { ContenuDetailsComponent } from './FrontOffice/aicha/contenu-details/contenu-details.component';
+import { ObjectifdetailsComponent } from './FrontOffice/aicha/objectifdetails/objectifdetails.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AddServiceComponent } from './FrontOffice/pato/add-service/add-service.component';
 import { DetailServiceComponent } from './FrontOffice/pato/detail-service/detail-service.component';
 import { LisetServiceComponent } from './FrontOffice/pato/liset-service/liset-service.component';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { ListRoomsComponent } from './FrontOffice/pato/list-rooms/list-rooms.component';
 import { ListCommentsComponent } from './FrontOffice/pato/list-comments/list-comments.component';
+import { ListRoomsComponent } from './FrontOffice/pato/list-rooms/list-rooms.component';
+import { AddBesionComponent } from './FrontOffice/eya/add-besion/add-besion.component';
 import { DatailsMarcheComponent } from './FrontOffice/eya/datails-marche/datails-marche.component';
-import { AddBesoinComponent } from './FrontOffice/eya/add-besoin/add-besoin.component';
-import { DetailsBesoinComponent } from './FrontOffice/eya/details-besoin/details-besoin.component';
+import { DetailsBesionComponent } from './FrontOffice/eya/details-besion/details-besion.component';
 
 
 
@@ -80,8 +94,6 @@ import { DetailsBesoinComponent } from './FrontOffice/eya/details-besoin/details
     UsersComponent,
     FooterComponent,
     MarketComponent,
-
-
     SidebarComponent,
         TopHeaderComponent,
         ToDoComponent,
@@ -95,14 +107,27 @@ import { DetailsBesoinComponent } from './FrontOffice/eya/details-besoin/details
         CheckoutComponent,
         ListPaymentByUserComponent,
         FormulaireCrmComponent,
+        ListofPaymentComponent,
+        AjouterEventComponent,
+        ListEvenementsComponent,
+        ModifierEventComponent,
+        DetailEvenementComponent,
+        ListFavorisComponent,
+        CampagneComponent,
+        CampagneEditComponent,
+        ContenuComponent,
+        ContenuAddComponent,
+        ContenuDetailsComponent,
+        ObjectifdetailsComponent,
         AddServiceComponent,
         DetailServiceComponent,
         LisetServiceComponent,
-        ListRoomsComponent,
         ListCommentsComponent,
+        ListRoomsComponent,
+        AddBesionComponent,
         DatailsMarcheComponent,
-        AddBesoinComponent,
-        DetailsBesoinComponent
+        DetailsBesionComponent,
+        
   ],
   imports: [
     BrowserModule,
@@ -116,7 +141,9 @@ import { DetailsBesoinComponent } from './FrontOffice/eya/details-besoin/details
     MatCardModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    MatPaginatorModule
+    MatPaginatorModule, 
+    MatDialogModule,
+    NoopAnimationsModule
    
    
     

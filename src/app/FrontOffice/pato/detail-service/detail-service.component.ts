@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceFournisseur } from 'src/app/Models/ServiceFournisseur';
-import { PrestationServiceService } from 'src/app/Services/aziz/prestation-service.service';
 import { HttpClient } from '@angular/common/http';
 import { loadStripe } from '@stripe/stripe-js';
 import { environment } from 'src/environments/environment';
 import { Room } from 'src/app/Models/Room';
+import { PrestationServiceService } from 'src/app/prestation-service.service';
 
 @Component({
   selector: 'app-detail-service',
@@ -29,7 +29,7 @@ export class DetailServiceComponent implements OnInit {
     this.serviceId = this.route.snapshot.params['id'];
     this.getServiceById(this.serviceId);
     this.userConnecte = "azizmk2";
-    console.log('userConnecte:', this.userConnecte);
+    console.log('userConnecte:', this.userName);
   }
 
   getServiceById(serviceId: number): void {
@@ -92,7 +92,7 @@ export class DetailServiceComponent implements OnInit {
 
 
   addRoom(): void {
-    this.serviceService.addRoom(this.room, this.userConnecte, this.serviceF.fournisseur.userName, this.serviceId)
+    this.serviceService.addRoom(this.room, this.userName, this.serviceF.fournisseur.userName, this.serviceId)
       .subscribe(
         (createdRoom: any) => {
           console.log('Room added successfully with ID:', createdRoom.idRoom); 

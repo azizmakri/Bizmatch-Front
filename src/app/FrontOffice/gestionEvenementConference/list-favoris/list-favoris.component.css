@@ -1,0 +1,43 @@
+/* Dans votre fichier CSS personnalisé */
+.custom-button {
+    background-color: #007bff; /* Couleur de fond bleue */
+    color: #fff; /* Couleur de texte blanche */
+    border: none; /* Pas de bordure */
+    padding: 10px 20px; /* Rembourrage intérieur */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur de souris en forme de main */
+  }
+  
+  .custom-button:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+  }
+
+  /* Styles pour le cœur en rouge */
+.heart-red {
+  color: red; /* Changez la couleur en rouge ou celle de votre choix */
+}
+
+/* Styles pour le cœur en blanc */
+.heart-white {
+  color: white; /* Changez la couleur en blanc ou celle de votre choix */
+}
+.heart-icon {
+  color: white; /* Couleur de base (par exemple, blanc) */
+  cursor: pointer; /* Curseur de type main pour indiquer que l'icône est cliquable */
+}
+
+/* Style pour le cœur rouge (lorsqu'il est sélectionné) */
+.heart-selected {
+  color: red; /* Couleur du cœur sélectionné (par exemple, rouge) */
+}
+/* Styles personnalisés pour les boutons */
+.smaller-button {
+    font-size: 14px; /* Réduire la taille de la police */
+    padding: 5px 10px; /* Ajuster le rembourrage */
+  }
+  
+  /* Style pour l'espace entre les boutons */
+  .button-separator {
+    width: 10px; /* Ajuster la largeur de l'espace entre les boutons */
+  }
+  

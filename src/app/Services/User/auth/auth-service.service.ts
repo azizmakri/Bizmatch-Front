@@ -74,6 +74,7 @@ export class AuthServiceService {
             linkedIn: response.user.linkedIn, // Adjust these property names
             siteWeb: response.user.siteWeb, // Adjust these property names
             aboutMe: response.user.aboutMe, // Adjust these property names
+            image: response.user.image, // Adjust these property names
             location: response.user.location, // Adjust these property names
             Domaines: response.user.Domaines,
             userEmail: response.user.userEmail, // Adjust these property names

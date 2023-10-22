@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommentRoom } from 'src/app/Models/CommentRoom';
 import { Room } from 'src/app/Models/Room';
-import { PrestationServiceService } from 'src/app/Services/aziz/prestation-service.service';
+import { PrestationServiceService } from 'src/app/prestation-service.service';
 
 @Component({
   selector: 'app-list-comments',
@@ -12,20 +12,26 @@ import { PrestationServiceService } from 'src/app/Services/aziz/prestation-servi
 })
 export class ListCommentsComponent  implements OnInit {
 
-constructor(private route: ActivatedRoute, private serviceService: PrestationServiceService , private http: HttpClient, private router: Router) {}
-
+constructor(private route: ActivatedRoute, private serviceService: PrestationServiceService , private http: HttpClient, private router: Router) {
+  this.getUserNameFromLocalStorage();  // Invoke the method to set the userName
+}
+getUserNameFromLocalStorage(): void {
+  const userJSON = localStorage.getItem('user');
+  if (userJSON) {
+    const userObj = JSON.parse(userJSON);
+    this.userName = userObj.userName;
+  }
+}
+  userName!: string;
   roomId!: number;
   room!: Room;
   comment!:CommentRoom;
   commentList !: CommentRoom[];
   descriptionComment!:string;
-  userconnecte!:string;
   friend!:string;
 
   ngOnInit(): void {
     // Extract the campagneId from the URL
-    this.userconnecte="azizmk";
-    this.friend="azizmk2";
     this.roomId = this.route.snapshot.params['id'];
     this.serviceService.getRoomById(this.roomId)
       .subscribe(
@@ -56,7 +62,7 @@ constructor(private route: ActivatedRoute, private serviceService: PrestationSer
     this.comment = new CommentRoom();
     this.comment.descriptionComment = this.descriptionComment;
 
-    this.serviceService.addComment(this.comment, this.userconnecte, this.roomId)
+    this.serviceService.addComment(this.comment, this.userName, this.roomId)
       .subscribe(
         () => {
           console.log('comment added successfully');
@@ -74,4 +80,3 @@ onFormSubmit(): false {
 }
   
 }
-

@@ -9,6 +9,7 @@ export class User {
   linkedIn!: string;
   siteWeb!: string;
   aboutMe!: string;
+  image!: string;
   location!: string;
   Domaines!: string;
   userEmail!: string;

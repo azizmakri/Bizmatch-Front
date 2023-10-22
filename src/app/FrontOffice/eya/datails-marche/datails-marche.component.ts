@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Marche } from 'src/app/Models/Marche';
 import { CompagneMarketingService } from 'src/app/Services/eya/compagne-marketing.service';

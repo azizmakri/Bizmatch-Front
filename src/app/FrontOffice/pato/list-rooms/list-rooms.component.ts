@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Room } from 'src/app/Models/Room';
-import { PrestationServiceService } from 'src/app/Services/aziz/prestation-service.service';
+import { PrestationServiceService } from 'src/app/prestation-service.service';
 
 @Component({
   selector: 'app-list-rooms',
@@ -11,11 +11,19 @@ export class ListRoomsComponent implements OnInit {
   rooms: Room[] = [];
   userName!: string;
 
-  constructor(private serviceService: PrestationServiceService) { }
+  constructor(private serviceService: PrestationServiceService) { 
+    this.getUserNameFromLocalStorage();  // Invoke the method to set the userName
+
+  }
+  getUserNameFromLocalStorage(): void {
+    const userJSON = localStorage.getItem('user');
+    if (userJSON) {
+      const userObj = JSON.parse(userJSON);
+      this.userName = userObj.userName;
+    }
+  }
 
   ngOnInit(): void {
-    this.userName = "azizmk2";
-
     this.getRoomsByUser(this.userName);
   }
 
