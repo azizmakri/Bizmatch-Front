@@ -48,6 +48,7 @@ import { ListCommentsComponent } from './FrontOffice/pato/list-comments/list-com
 import { AddBesionComponent } from './FrontOffice/eya/add-besion/add-besion.component';
 import { DatailsMarcheComponent } from './FrontOffice/eya/datails-marche/datails-marche.component';
 import { DetailsBesionComponent } from './FrontOffice/eya/details-besion/details-besion.component';
+import { ChatBotComponent } from './FrontOffice/public/chat-bot/chat-bot.component';
 const routes: Routes = [
   
         {
@@ -191,6 +192,11 @@ const routes: Routes = [
         {
           path:'detailbesoin/:id',
           component:DetailsBesionComponent
+        }
+        ,
+        {
+          path:'chatbot',
+          component:ChatBotComponent
         }
         ,
         

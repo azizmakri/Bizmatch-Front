@@ -1,0 +1,30 @@
+<!-- Add to your head section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<div class="chat-box">
+    <div class="chat-box-header">
+        <h3>Message Us</h3>
+        <p><i class="fa fa-times"></i></p>
+    </div>
+    <div class="chat-box-body">
+        <div class="chat-box-body-send">
+            <p>This is my message.</p>
+            <span>12:00</span>
+        </div>
+        <div class="chat-box-body-receive">
+            <p>This is my message.</p>
+            <span>12:00</span>
+        </div>
+        
+       
+    </div>
+    <div class="chat-box-footer">
+        <button id="addExtra"><i class="fa fa-plus"></i></button>
+        <input placeholder="Enter Your Message" type="text" id="messageInput"/>
+        <button class="send-message-btn" (click)="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+
+    </div>
+</div>
+<div class="chat-button"><span></span></div>
+
+
