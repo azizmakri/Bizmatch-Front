@@ -56,7 +56,7 @@ export class DetailServiceComponent implements OnInit {
     const payment = {
       name: this.serviceF.nomService,
       currency: 'usd',
-      amount: this.serviceF.prixService * 100,  // Convert to cents for Stripe
+      amount: this.serviceF.prixService,  // Convert to cents for Stripe
       quantity: '1',
       cancelUrl: 'http://localhost:4200/cancel',
       successUrl: 'http://localhost:4200/success',
