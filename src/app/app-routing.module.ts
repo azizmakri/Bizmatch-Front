@@ -48,6 +48,7 @@ import { ListCommentsComponent } from './FrontOffice/pato/list-comments/list-com
 import { AddBesionComponent } from './FrontOffice/eya/add-besion/add-besion.component';
 import { DatailsMarcheComponent } from './FrontOffice/eya/datails-marche/datails-marche.component';
 import { DetailsBesionComponent } from './FrontOffice/eya/details-besion/details-besion.component';
+import { AjouterReunionComponent } from './FrontOffice/gestionEvenementConference/reunion/reunion.component';
 const routes: Routes = [
   
         {
@@ -200,6 +201,8 @@ const routes: Routes = [
         
         /**routes GestionEvenement */
 { path: 'Evenements', component: ListEvenementsComponent },
+{ path: 'AjouterReunion', component: AjouterReunionComponent },
+
 { path: 'AjouterEvent', component: AjouterEventComponent },
 {
   path: 'ModifierEvenement/:id', // Utilisez le nom de chemin souhaité

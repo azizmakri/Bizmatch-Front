@@ -1,0 +1,71 @@
+<body class="page-streams">
+
+    
+
+    <div class="page-wrapper">
+  <app-header></app-header>
+        <div class="page-content">
+            <aside class="sidebar is-show" id="sidebar">
+                <app-sidebarfront></app-sidebarfront>
+            </aside>
+            <main class="page-main">
+                <h3 class="uk-text-lead">Ajouter Reunion</h3>
+                <div data-uk-filter="target: .js-filter">
+                    <ul class="uk-subnav uk-subnav-pill">
+                
+                        <!-- <li data-uk-filter-control="[data-type='action']"><a href="#">Action</a></li>
+                        <li data-uk-filter-control="[data-type='adventure']"><a href="#">Adventure</a></li>
+                        <li data-uk-filter-control="[data-type='casual']"><a href="#">Casual</a></li>
+                        <li data-uk-filter-control="[data-type='simulation']"><a href="#">Simulation</a></li>
+                        <li data-uk-filter-control="[data-type='horror']"><a href="#">Horror</a></li>
+                        <li data-uk-filter-control="[data-type='anime']"><a href="#">Anime</a></li>
+                        <li data-uk-filter-control="[data-type='hunting']"><a href="#">Hunting</a></li>
+                        <li data-uk-filter-control="[data-type='racing']"><a href="#">Racing</a></li>
+                        <li data-uk-filter-control="[data-type='team_sports']"><a href="#">Team Sports</a></li> -->
+                    </ul>
+                  <!-- ajouter-reunion.component.html -->
+                  <div class="form-group">
+                    <label for="sujet">Sujet</label>
+                    <input type="text" class="form-control" id="sujet" [(ngModel)]="reunion.sujet" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="dateReunion">Date de Réunion</label>
+                    <input type="date" class="form-control" id="dateReunion" [(ngModel)]="reunion.dateReunion" required>
+                </div>
+                
+                <br>
+                <div class="form-group">
+                    <label for="typeReunion">Type de Réunion</label>
+                    <select class="form-control" id="typeReunion" [(ngModel)]="reunion.typeReunion" required>
+                        <option value="EN_PRESENTIEL">En présentiel</option>
+                        <option value="EN_LIGNE">En ligne</option>
+                    </select>
+                </div>
+                <div *ngIf="reunion.typeReunion === 'EN_PRESENTIEL'" class="form-group">
+                    <label for="lieu">Lieu</label>
+                    <input type="text" class="form-control" id="lieu"  [(ngModel)]="reunion.lieu" required>
+                </div>
+                <br>
+                <div class="form-group" *ngIf="reunion.typeReunion === 'EN_LIGNE'">
+                    <label for="urlReunion">URL de Réunion en Ligne (Google Meet)</label>
+                    <input type="text" class="form-control" placeholder="https://meet.google.com/salle-de-reunion-generique" id="urlReunion" [(ngModel)]="urlReunion" required>
+                </div>
+                <div class="alert alert-success" *ngIf="successMessage">{{ successMessage }}</div>
+                <br>
+                <button type="button" class="btn btn-primary" (click)="ajouterReunion()">Ajouter Réunion</button>
+                
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <app-footer></app-footer> 
+            </main>
+        </div>
+    </div>
+  <app-modals></app-modals>
+  
+  
+  </body>
