@@ -76,6 +76,10 @@ const routes: Routes = [
           path:'favourite',
           component:FavouritesComponent
         },
+        { 
+          path: 'UserProfile/:userName', 
+          component: UserProfileComponent 
+        },
         {
           path:'chat',
           component:ChatComponent

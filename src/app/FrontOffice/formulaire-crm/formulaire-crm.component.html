@@ -23,7 +23,7 @@
               <ol class="breadcrumb mb-0 p-0 align-items-center">
                 <li class="breadcrumb-item"><a href="javascript:;"><ion-icon name="home-outline"></ion-icon></a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+                <li class="breadcrumb-item active" aria-current="page">Réclamation/Contact us</li>
               </ol>
             </nav>
           </div>
@@ -40,26 +40,26 @@
             <div class="card radius-10">
               <div class="card-body">
                 <form (submit)="onSubmit()" class="claim-form">
-                    <h5 class="mb-4">Claim</h5>
+                    <h5 class="mb-4">Réclamation</h5>
                     <div class="row g-4">
                         <!-- Service Type -->
                         <div class="col-6">
-                            <label class="form-label" for="service">Service Type:</label>
+                            <label class="form-label" for="service">Type Service :</label>
                             <select class="form-control custom-input" id="service" [(ngModel)]="formulaire.service" name="service">
-                                <option value="" disabled>Select a service</option>
+                                <option value="" disabled>service</option>
                                 <option value="SERVICE_COMMERCIAL">Service Commercial</option>
                                 <option value="SERVICE_TECHNIQUE">Service Technique</option>
                             </select>
                         </div>
                         <!-- Title -->
                         <div class="col-6">
-                            <label class="form-label" for="titre">Title:</label>
+                            <label class="form-label" for="titre">Titre:</label>
                             <input type="text" class="form-control custom-input" id="titre" [(ngModel)]="formulaire.titre" name="titre" placeholder="Enter title">
                         </div>
                         <!-- Description -->
                         <div class="col-12">
                             <label class="form-label" for="description">Description:</label>
-                            <textarea class="form-control custom-input" id="description" rows="4" [(ngModel)]="formulaire.description" name="description" placeholder="Enter details..."></textarea>
+                            <textarea class="form-control custom-input" id="description" rows="4" [(ngModel)]="formulaire.description" name="description" placeholder="Enterez vos details..."></textarea>
                         </div>
                     </div>
                     <div class="text-start mt-4">
@@ -72,7 +72,7 @@
                             </svg>
                           </div>
                         </div>
-                        <span>Send</span>
+                        <span>Envoyez</span>
                       </button>
                     </div>
                 </form>
@@ -110,7 +110,7 @@
            
             <!-- Additional Info -->
             <div class="info-container">
-              <h5>Our Office Information</h5>
+              <h5>Comment nous Contacter...</h5>
               <address>
                   <p><i class="fas fa-map-marker-alt"></i> 18, rue de l'Usine - ZI Aéroport Charguia II 2035 Ariana</p>
                   <p><i class="fas fa-phone-alt"></i> (+216) 29 603 424</p>

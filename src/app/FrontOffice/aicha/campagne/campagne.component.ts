@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -6,13 +7,15 @@ import { CampagneMarketingService } from 'src/app/Services/aicha/campagne-market
 import { CampagneEditComponent } from '../campagne-edit/campagne-edit.component';
 import { MatDialog } from '@angular/material/dialog';
 
+type Color = any;
+type Label = string;
+
 @Component({
   selector: 'app-campagne',
   templateUrl: './campagne.component.html',
   styleUrls: ['./campagne.component.css']
 })
 export class CampagneComponent {
-
   CampagnesMarketing!: CampagneMarketing[];
   campagne!:CampagneMarketing;
 
@@ -86,6 +89,7 @@ export class CampagneComponent {
    /*goToUpdateCampagneMarketing(id: number): void {
      this.route.navigate(['/update-Campagne', id]);
  }*/
+
 
 
 }

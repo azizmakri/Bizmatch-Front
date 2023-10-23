@@ -1,0 +1,18 @@
+.widjet-game__media img {
+    max-width: 80%; /* adjust the percentage as needed */
+    max-height: 80%;
+}
+.widjet-game, 
+.widjet-game__title, 
+.widjet-game__record, 
+.widjet-game__last-played {
+    margin: 0;
+    padding: 0.5em; /* adjust padding as needed */
+}
+.widjet-game {
+    transform: scale(0.9); /* scale the widget down to 90% of its original size */
+}
+.badges-list img {
+    width: 50px; /* adjust the pixel value as needed */
+    height: 50px; /* adjust the pixel value as needed */
+}

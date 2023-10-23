@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Tendances } from 'src/app/Models/Tendances';
 import {  User, UserService } from 'src/app/Services/User/user.service';
+import { DecouverteTendanceService } from 'src/app/Services/eya/decouverte-tendance.service';
 
 @Component({
   selector: 'app-homepagefront',
@@ -8,25 +10,36 @@ import {  User, UserService } from 'src/app/Services/User/user.service';
 })
 export class HomepagefrontComponent {
 
+ 
   users: User[] = [];
   user!: User;
 
  
+  tendances: Tendances[] = [];
+ 
   // Define a state variable to track sent requests
   sentRequests: { [key: string]: boolean } = {};
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+    private tendanceService:DecouverteTendanceService) { }
 
   ngOnInit(): void {
-  this.user = JSON.parse(localStorage.getItem('user') || '{}');
-    this.userService.retrieveUsers().subscribe(data => {
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+    this.userService.getUsers().subscribe(data => {
       this.users = data.filter(user => user.userName !== 'adminBizmatch' && user.userName !== this.user.userName );
       
       console.log(this.users);
 
 
     });
+   
+   
+    this.tendanceService.getTendances().subscribe( data => {
+      this.tendances = data;
+      console.log(this.tendances);
+    });
   }
 
+    
   getImageFileName(path: string): string {
     const pathParts = path.split('/');
     const fileName = pathParts[pathParts.length - 1];
@@ -54,5 +67,4 @@ export class HomepagefrontComponent {
     }
   }
   
-
 }

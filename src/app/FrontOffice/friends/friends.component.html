@@ -32,7 +32,7 @@
                     <div class="uk-width-2-3@xl">
                         <div class="widjet --filters">
                             <div class="widjet__head">
-                                <h3 class="uk-text-lead">Friends</h3>
+                                <h3 class="uk-text-lead">Partenaires</h3>
                             </div>
                             <div class="widjet__body">
                                 <div class="uk-grid uk-flex-middle uk-grid-small" data-uk-grid>
@@ -41,20 +41,15 @@
                                             <div class="search__input"><i class="ico_search"></i><input type="search" name="search" placeholder="Search"></div>
                                         </div>
                                     </div>
-                                    <div class="uk-width-auto"><select class="js-select">
-                                            <option value="">Filter: Active</option>
-                                            <option value="Active 1">Active 1</option>
-                                            <option value="Active 2">Active 2</option>
-                                            <option value="Active 3">Active 3</option>
-                                        </select></div>
-                                    <div class="uk-width-auto"><button class="ico_more" href="#"></button></div>
+                                   
+                                    <div class="uk-width-auto"><button class="ico_more" href="/home"></button></div>
                                 </div>
                             </div>
                         </div>
                         <div class="uk-grid uk-grid-small uk-child-width-1-2@m" data-uk-grid *ngFor="let partner of partners">
                             <div>
                                 <div class="user-item --active">
-                                    <div class="user-item__avatar"><img src="assets/img/user-list-1.png" alt="user"></div>
+                                    <div class="user-item__avatar"><img [src]="partner.image ? partner.image : 'default-image.png'" alt="partner Image" ></div>
                                     <div class="user-item__box">
                                         <div class="user-item__name"><a href="06_chats.html">{{ partner.userName }}</a></div>
                                     </div>
@@ -66,12 +61,12 @@
                     <div class="uk-width-1-3@xl">
                         <div class="widjet --friend-requests">
                             <div class="widjet__head">
-                                <h3 class="uk-text-lead">Friend Requests</h3>
+                                <h3 class="uk-text-lead">Demandes d'ajout</h3>
                             </div>
-                            <div class="widjet__body">
-                                <ul class="friend-requests-list" *ngFor="let partnerRequest of partnerRequests" >
+                            <div class="widjet__body" *ngFor="let partnerRequest of partnerRequests">
+                                <ul class="friend-requests-list"  >
                                     <li class="friend-requests-item">
-                                        <div class="friend-requests-item__avatar"><img src="assets/img/user-list-5.png" alt="user"></div>
+                                        <div class="friend-requests-item__avatar"><img [src]="partnerRequest.image ? partnerRequest.image : 'default-image.png'" alt="partnerRequest Image" ></div>
                                         <div class="friend-requests-item__name">{{ partnerRequest.userName }}</div>
                                         <div class="friend-requests-item__action"><button class="confirm ico_tick-circle" type="button" [class.confirm]="!isHovered" (mouseenter)="onButtonHover(true)" (mouseleave)="onButtonHover(false)"(click)="acceptPartnership(partnerRequest.userName)"></button><button class="reject ico_trash" type="button" (click)="removePartnerRequest(partnerRequest.userName)"></button></div>
                                     </li>

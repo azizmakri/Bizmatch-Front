@@ -65,7 +65,7 @@
                   <td>{{ i + 1 }}</td>
                   <td>
                     <div class="d-flex align-items-center gap-3 cursor-pointer">
-                      <img src="https://via.placeholder.com/110X110/212529/fff" class="rounded-circle" width="44" height="44" alt="">
+                      <img [src]="user.image" alt="{{ user.image }}" class="rounded-circle" width="44" height="44" alt="">
                       <div class="">
                         <p class="mb-0">{{ user.userName }}</p>
                       </div>
@@ -79,11 +79,9 @@
 
                   <td>
                     <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                      <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Views" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                      <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                      <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
+                      <a [routerLink]="['/UserProfile', user.userName]" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Views" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
                       <a href="javascript:;" (click)="addRoleToSelectedUser(user.roleDemander, user.userName)" class="text-success" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Add Role" aria-label="Add Role"><i class="bi bi-person-plus-fill"></i></a>
-
+                      <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
                     </div>
                   </td>
                 </tr>

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CampagneMarketing } from 'src/app/Model/CampagneMarketing';
 import { Contenu } from 'src/app/Model/Contenu';
 import { ContenuService } from 'src/app/Services/aicha/contenu.service';
 
@@ -10,7 +11,8 @@ import { ContenuService } from 'src/app/Services/aicha/contenu.service';
   styleUrls: ['./contenu-details.component.css']
 })
 export class ContenuDetailsComponent {
- 
+  campagneId!: number;
+  campagne!: CampagneMarketing;
   contenuId!: number;
   contenu!: Contenu| undefined;
   contenuList : Contenu[] = [];

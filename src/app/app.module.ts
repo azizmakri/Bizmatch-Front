@@ -68,7 +68,7 @@ import { ListRoomsComponent } from './FrontOffice/pato/list-rooms/list-rooms.com
 import { AddBesionComponent } from './FrontOffice/eya/add-besion/add-besion.component';
 import { DatailsMarcheComponent } from './FrontOffice/eya/datails-marche/datails-marche.component';
 import { DetailsBesionComponent } from './FrontOffice/eya/details-besion/details-besion.component';
-
+import { ChatBotComponent } from './FrontOffice/public/chat-bot/chat-bot.component';
 
 
 @NgModule({
@@ -127,6 +127,7 @@ import { DetailsBesionComponent } from './FrontOffice/eya/details-besion/details
         AddBesionComponent,
         DatailsMarcheComponent,
         DetailsBesionComponent,
+        ChatBotComponent,
         
   ],
   imports: [

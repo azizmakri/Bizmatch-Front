@@ -34,7 +34,7 @@
                                         <div class="game-card__rating"><span>{{ contena?.type }}</span></div>
                                         </div>
                                     <div class="game-card__bottom">
-                                        <div class="game-card__price"><span>{{ contena?.lien }}</span></div>
+                                        <a href="{{ contena?.lien  }}" target="_blank">{{ contena?.lien }}</a>>
                                       </div>
                                 </div>
                                 <div class="game-card__more"><a [routerLink]="['/contenuDetails', contena?.id]"><i class="ico_more"></i></a></div>

@@ -22,12 +22,12 @@
                     <div class="card" style="width: 100%;">
                       <div class="card-body">
                         <div class="d-flex align-items-center">
-                          <h5 class="mb-0">Ajouter une Service</h5>
+                          <h5 class="mb-0">Ajouter un Service</h5>
                         </div>
                         <br>
                         <form #serviceForm="ngForm" (ngSubmit)="onSubmit()">
                           <div class="mb-3">
-                              <label for="nom" class="form-label">Nom</label>
+                              <label for="nom" class="form-label">Titre</label>
                               <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="service.nomService" required>
                           </div>
                           <div class="mb-3">
