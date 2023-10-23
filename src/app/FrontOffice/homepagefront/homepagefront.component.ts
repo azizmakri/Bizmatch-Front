@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Tendances } from 'src/app/Models/Tendances';
 import {  User, UserService } from 'src/app/Services/User/user.service';
+import { DecouverteTendanceService } from 'src/app/Services/eya/decouverte-marche.service';
 
 @Component({
   selector: 'app-homepagefront',
@@ -10,14 +12,16 @@ export class HomepagefrontComponent {
 
   users: User[] = [];
   user!: User;
-
+  tendances: Tendances[] = [];
  
   // Define a state variable to track sent requests
   sentRequests: { [key: string]: boolean } = {};
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,
+    private tendanceService:DecouverteTendanceService) { }
 
   ngOnInit(): void {
-  this.user = JSON.parse(localStorage.getItem('user') || '{}');
+    
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
     this.userService.retrieveUsers().subscribe(data => {
       this.users = data.filter(user => user.userName !== 'adminBizmatch' && user.userName !== this.user.userName );
       
@@ -25,8 +29,15 @@ export class HomepagefrontComponent {
 
 
     });
+   
+   
+    this.tendanceService.getTendances().subscribe( data => {
+      this.tendances = data;
+      console.log(this.tendances);
+    });
   }
 
+    
   getImageFileName(path: string): string {
     const pathParts = path.split('/');
     const fileName = pathParts[pathParts.length - 1];
@@ -34,6 +45,7 @@ export class HomepagefrontComponent {
     console.log('Image Path:', this.getImageFileName(this.user.image)); // Adjusted from this.contenu.image
     return fileName;
 }
+
   addPartnershipRequest(desiredPartnerUserName: string) {
     const jwtToken = localStorage.getItem('jwtToken');
   this.user = JSON.parse(localStorage.getItem('user') || '{}');

@@ -24,6 +24,10 @@ export class CampagneMarketingService {
     
   }
 
+  getROIForCampaign(campagneId: number): Observable<number> {
+    const roiUrl = `http://localhost:8083/marketing/mesure/roi/${campagneId}`;
+    return this.http.get<number>(roiUrl, this.httpOptions);
+}
   getCampagneMarketing(id:number):Observable<CampagneMarketing>{
     return this.http.get<CampagneMarketing>(this.url+"/"+id,this.httpOptions);
     console.log("get CampagneMarketing");

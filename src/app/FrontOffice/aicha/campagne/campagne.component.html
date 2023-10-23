@@ -44,7 +44,8 @@
           <td>
             <div class="table-actions d-flex align-items-center gap-3 fs-6">
             <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Views" aria-label="Views" [routerLink]="['/contenu', campagne.id]"><i class="bi bi-eye-fill"></i></a>
-            <a href="javascript:;" class="text-warning" href="#modal-report" data-uk-toggle data-bs-placement="bottom" title="Edit" data-bs-original-title="Edit" aria-label="Edit" ><i class="bi bi-pencil-fill"></i></a>
+            <a href="javascript:;" class="text-warning" href="#modal-roi" data-uk-toggle data-bs-placement="bottom" title="ROI" data-bs-original-title="ROI" aria-label="ROI" (click)="fetchRoiForCampaign(campagne.id)"><i class="bi bi-pencil-fill"></i></a>
+
 
               <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete" (click)="delete(campagne.id)"><i class="bi bi-trash-fill" ></i></a>
                 

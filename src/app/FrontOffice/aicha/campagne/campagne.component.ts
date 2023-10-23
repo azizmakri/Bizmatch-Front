@@ -5,6 +5,10 @@ import { CampagneMarketing } from 'src/app/Model/CampagneMarketing';
 import { CampagneMarketingService } from 'src/app/Services/aicha/campagne-marketing.service';
 import { CampagneEditComponent } from '../campagne-edit/campagne-edit.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ChartDataset, ChartOptions } from 'chart.js';
+
+type Color = any;
+type Label = string;
 
 @Component({
   selector: 'app-campagne',
@@ -12,7 +16,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./campagne.component.css']
 })
 export class CampagneComponent {
-
+  public roiChartData: ChartDataset[] = [{ data: [], label: 'ROI' }];
   CampagnesMarketing!: CampagneMarketing[];
   campagne!:CampagneMarketing;
 
@@ -86,6 +90,17 @@ export class CampagneComponent {
    /*goToUpdateCampagneMarketing(id: number): void {
      this.route.navigate(['/update-Campagne', id]);
  }*/
+ fetchRoiForCampaign(campagneId: number) {
+  this.cms.getROIForCampaign(campagneId).subscribe(roi => {
+      if (roi && Array.isArray(this.roiChartData) && this.roiChartData.length > 0) {
+          this.roiChartData[0].data = [roi];
+      } else {
+          console.error("Error processing ROI data");
+      }
+  }, error => {
+      console.error("Failed to fetch ROI for campaign:", error);
+  });
+}
 
 
 }

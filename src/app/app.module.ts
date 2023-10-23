@@ -69,6 +69,7 @@ import { AddBesionComponent } from './FrontOffice/eya/add-besion/add-besion.comp
 import { DatailsMarcheComponent } from './FrontOffice/eya/datails-marche/datails-marche.component';
 import { DetailsBesionComponent } from './FrontOffice/eya/details-besion/details-besion.component';
 import { ChatBotComponent } from './FrontOffice/public/chat-bot/chat-bot.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -145,7 +146,9 @@ import { ChatBotComponent } from './FrontOffice/public/chat-bot/chat-bot.compone
     BrowserAnimationsModule,
     MatPaginatorModule, 
     MatDialogModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    NgChartsModule,
+
    
 
   ],

@@ -9,7 +9,8 @@ body {
 }
 
 .chat-box {
-  height: 90%;
+ 
+  height: 80%;
   width: 400px;
   position: absolute;
   margin: 0 auto;
@@ -68,26 +69,47 @@ body {
   opacity: 0;
 }
 
+.user-message {
+  background-color: #abb5f4;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  text-align: right;
+}
+
+.bot-message {
+  background-color: #eeeff7;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.timestamp {
+  font-size: 0.8em;
+  color: #302f2f;
+}
+
 .chat-box-body-send {
   width: 250px;
   float: right;
-  background: white;
+  background: rgb(88, 96, 209);
   padding: 10px 20px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.015);
+  box-shadow: 0 0 10px rgba(254, 254, 254, 0.015);
   margin-bottom: 14px;
 }
 
 .chat-box-body-send p {
+  float: right;
   margin: 0;
-  color: #444;
+  color: #ffffff;
   font-size: 14px;
   margin-bottom: 0.25rem;
 }
 
 .chat-box-body-send span {
   float: right;
-  color: #777;
+  color: #fff9f9;
   font-size: 10px;
 }
 
@@ -110,12 +132,12 @@ body {
 
 .chat-box-body-receive span {
   float: right;
-  color: #777;
+  color: #ffffff;
   font-size: 10px;
 }
 .send-message-btn {
-    background-color: #2C50EF;
-    color: white;
+    background-color: hsl(0, 0%, 100%);
+    color:  rgb(53, 72, 160);
     border: none;
     border-radius: 50%; /* Make the button round */
     width: 40px; /* Set width */
@@ -128,7 +150,7 @@ body {
 }
 
 .send-message-btn:hover {
-    background-color: #1a35b8;
+    background-color: #0e2bd0;
 }
 .chat-box-footer {
   position: relative;
@@ -172,37 +194,26 @@ body {
   transform: translate(0px, 20px);
   cursor: pointer;
 }
-
 .chat-button {
-  padding: 25px 16px;
-  background: #2C50EF;
-  width: 120px;
+  background: #213383;
+  width: 60px;  /* Diameter of the circle */
+  height: 60px;  /* Make sure width and height are the same to get a circle */
   position: absolute;
   bottom: 0;
   right: 0;
   margin: 15px;
-  border-radius: 25px;
+  border-radius: 50%;  /* 50% to make it a circle */
   box-shadow: 0 2px 15px rgba(44, 80, 239, 0.21);
   cursor: pointer;
+  display: flex;  
+  justify-content: center; 
+  align-items: center;
 }
 
-.chat-button span::before {
-  content: "";
-  height: 15px;
-  width: 15px;
-  background: #47cf73;
-  position: absolute;
-  transform: translate(0, -7px);
-  border-radius: 15px;
-}
-
-.chat-button span::after {
-  content: "Message Us";
-  font-size: 14px;
+.chat-button .fa-robot {
+  font-size: 32px;  /* Adjust this size to make the icon bigger */
   color: white;
-  position: absolute;
-  left: 50px;
-  top: 18px;
+
 }
 
 .modal {
@@ -250,9 +261,30 @@ body {
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
   z-index: 30;
 }
+.user-icon {
+  width: 30px; /* Reduce the size */
+  height: 30px;
+  border-radius: 50%; /* To make it circular */
+  margin-right: 10px; /* Space between the image and the message text */
+}
+ .bot-icon {
+  width: 30px; /* Adjust the size as per your requirement */
+  height: 30px;
+  border-radius: 50%; /* To make it circular */
+  margin-left: 10px; /* Space between the image and the message text */
+}
+
+.message-wrapper {
+  display: flex; 
+  align-items: center; /* Align image and text vertically center */
+}
+
+/* You might want to adjust margin, padding, and other styles as needed */
+
 
 @media only screen and (max-width: 450px) {
   .chat-box {
     min-width: 100% !important;
+    
   }
 }

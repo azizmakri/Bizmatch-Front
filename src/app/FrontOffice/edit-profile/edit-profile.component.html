@@ -23,7 +23,7 @@
             <ol class="breadcrumb mb-0 p-0 align-items-center">
               <li class="breadcrumb-item"><a href="javascript:;"><ion-icon name="home-outline"></ion-icon></a>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+              <li class="breadcrumb-item active" aria-current="page">Profile</li>
             </ol>
           </nav>
         </div>
@@ -39,7 +39,7 @@
             <div class="card-body">
               <form (ngSubmit)="updateUserWithImage()">
                 
-                <h5 class="mb-3">Edit Profile</h5>
+                <h5 class="mb-3"> Modifier Profile</h5>
 <div class="mb-4 d-flex flex-column gap-3 align-items-center justify-content-center">
     <!-- Display the uploaded image or a placeholder if none -->
     <div class="user-change-photo shadow">
@@ -50,24 +50,24 @@
   </div>
     <!-- Button to trigger the file input -->
     <button type="button" class="btn btn-outline-dark btn-sm radius-30 px-4" (click)="fileInput.click()">
-        <ion-icon name="image-sharp"></ion-icon> Change Photo
+        <ion-icon name="image-sharp"></ion-icon> Modifier Image
     </button>
     <!-- Hidden file input to select image -->
     <input class="form-control" id="formFile" type="file" name="image" (change)="onFileSelected($event)" style="display: none;" #fileInput>
     <div class="alert alert-danger" *ngIf="imageInvalid">
-        La image est obligatoire
+        L'image est obligatoire
     </div>
 </div>
 
-                <h5 class="mb-0 mt-4">User Information</h5>
+                <h5 class="mb-0 mt-4"> Informations Personelles</h5>
                 <hr>
                 <div class="row g-3">
                   <div class="col-6">
-                    <label class="form-label">First Name</label>
+                    <label class="form-label"> Nom</label>
                     <input type="text" class="form-control" [(ngModel)]="user.userFirstName" name="userFirstName">
                   </div>
                   <div class="col-6">
-                    <label class="form-label">Last Name</label>
+                    <label class="form-label">Prénom</label>
                     <input type="text" class="form-control" [(ngModel)]="user.userLastName" name="userLastName">
                   </div>
                 </div>
@@ -77,7 +77,7 @@
                 <hr>
                 <div class="row g-3">
                   <div class="col-12">
-                    <label class="form-label">Address</label>
+                    <label class="form-label">Addresse</label>
                     <input type="text" class="form-control" [(ngModel)]="user.location" name="location">
                   </div>
                   <div class="col-12">
@@ -87,7 +87,7 @@
                   
         
                   <div class="col-6">
-                    <label class="form-label">Fb</label>
+                    <label class="form-label">Facebook</label>
                     <input type="text" class="form-control" [(ngModel)]="user.facebook" name="facebook">
                   </div>
                   <div class="col-6">
@@ -99,12 +99,12 @@
                     <input type="text" class="form-control" [(ngModel)]="user.siteWeb" name="siteWeb">
                   </div>
                   <div class="col-12">
-                    <label class="form-label">About Me</label>
+                    <label class="form-label">Bio</label>
                     <textarea class="form-control" rows="4" cols="4" [(ngModel)]="user.aboutMe" name="aboutMe"></textarea>
                   </div>
                 </div>
                 <div class="text-start mt-3">
-                  <button type="submit" class="btn btn-dark px-4">Save Changes</button>
+                  <button type="submit" class="btn btn-dark px-4">Modifier</button>
                 </div>
               </form>
               
@@ -124,66 +124,7 @@
      <a href="javaScript:;" class="back-to-top"><ion-icon name="arrow-up-outline"></ion-icon></a>
      <!--End Back To Top Button-->
 
-     <!--start switcher-->
-<div class="switcher-body">
-  <div class="offcanvas offcanvas-end shadow border-start-0 p-2" data-bs-scroll="true" data-bs-backdrop="false"
-    tabindex="-1" id="offcanvasScrolling">
-    <div class="offcanvas-header border-bottom">
-      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Theme Customizer</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-      <h6 class="mb-0">Theme Variation</h6>
-      <hr>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="LightTheme" value="option1">
-        <label class="form-check-label" for="LightTheme">Light</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="SemiDark" value="option1" checked>
-        <label class="form-check-label" for="SemiDark">Semi Dark</label>
-      </div>
-      <hr />
-      <h6 class="mb-0">Header Colors</h6>
-      <hr />
-      <div class="header-colors-indigators">
-        <div class="row row-cols-auto g-3">
-          <div class="col">
-            <div class="indigator headercolor1" id="headercolor1"></div>
-          </div>
-          <div class="col">
-            <div class="indigator headercolor2" id="headercolor2"></div>
-          </div>
-          <div class="col">
-            <div class="indigator headercolor3" id="headercolor3"></div>
-          </div>
-          <div class="col">
-            <div class="indigator headercolor4" id="headercolor4"></div>
-          </div>
-          <div class="col">
-            <div class="indigator headercolor5" id="headercolor5"></div>
-          </div>
-          <div class="col">
-            <div class="indigator headercolor6" id="headercolor6"></div>
-          </div>
-          <div class="col">
-            <div class="indigator headercolor7" id="headercolor7"></div>
-          </div>
-          <div class="col">
-            <div class="indigator headercolor8" id="headercolor8"></div>
-          </div>
-        </div>
-      </div>
 
-    </div>
-  </div>
-</div>
-<!--end switcher-->
-
-
-     <!--start overlay-->
-      <div class="overlay nav-toggle-icon"></div>
-     <!--end overlay-->
 
  </div>
 <!--end wrapper-->
