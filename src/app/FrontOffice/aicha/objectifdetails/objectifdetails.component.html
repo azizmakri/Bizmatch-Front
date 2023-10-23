@@ -18,37 +18,37 @@
                         <div class="news-feed news-feed-post">
                             <div class="post-header">
                                 <div class="user-info">
-                                    <div class="user-info__avatar"><img src="assets/img/profile.png" alt="profile"></div>
-                                    <div class="user-info__box">
-                                        <div class="user-info__title">John Doe</div>
-                                        <div class="user-info__text">17 Mins Ago</div>
-                                    </div>
+                                    <div class="user-info__avatar"><img *ngIf="previewImage; else placeholder" [src]="previewImage" alt="{{ user.image }}" class="img-thumbnail" >
+                                        <ng-template #placeholder>
+                                            <img *ngIf="user" [src]="'assets/images/' + getImageFileName(user.image)" alt="{{ user.image }}">        
+                                        </ng-template></div>
+                                        <div class="user-info__box">
+                                            <div class="user-info__title">{{ user.userName }}</div>
+                                            <div class="user-info__text">{{ user.userFirstName }} {{ user.userLastName }}</div>
+                                          </div>
                                 </div>
 
-                                <div class="item__more"><a href="10_game-profile.html"><i class="ico_more"></i></a></div>
+                                <div class="item__more"><a href="/profile"><i class="ico_more"></i></a></div>
                             </div>
 
-                            <h4 class="post-name">Next generation of technology has arrived</h4>
+                            <h4 class="post-name"></h4>
                             <div class="post-body">
-                                <p>Dolore magna aliqua quis nostrud exercitation consequat. Duis aute irure do lorin reprehendert sed ipsum nulla pariatur officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.</p>
-                                <div class="post-image">
-                                    <img src="assets/img/post2-1-1170x558.jpeg" alt="image">
-                                </div>
-
-
+                                <h2 class="post-name">{{ objectif?.titre }}</h2>
+                                <p>{{ objectif?.description }}</p>
+                               
                                 <div class="post-top-info">
                                     <!--Date -->
                                     <div class="post-date-content">
                                         <i class="essential-set-icon-calendar-6"></i>
-                                        <a class="fl-secondary-color-hv" href="#">March 6, 2020</a>
+                                        <span class="author-prefix">Cible Financière </span><a class="fl-secondary-color-hv" >{{ objectif?.cibleFinanciere }}</a>
                                     </div>
                                     <!--Date end-->
                                     <!--Author -->
                                     <div class="author-post-content">
                                         <i class="essential-set-icon-user"></i>
-                                        <span class="author-prefix">By</span>
+                                        <span class="author-prefix">By </span>
                                         <span class="author-link">
-                                            <a href="#">Alex Zaymund</a>
+                                            <a href="#">{{ user.userName }}</a>
                                         </span>
                                     </div>
                                     <!--Author end-->
@@ -56,13 +56,30 @@
                                         <i class="essential-set-icon-folder-10"></i>
                                         <!--Category -->
 
-                                        <a href="#" rel="category tag">Development</a>
+                                        <span class="author-prefix">Etat </span>  <a href="#" rel="category tag">{{ objectif?.etat }}</a>
                                         <!--Category end-->
                                     </div>
-                                    <div class="post-like-wrap">
-                                        <span class="fl-post-like">
-                                            <span class="sl-wrapper"><a href="#" class="sl-button sl-button-149" data-nonce="24c8244b2f" data-post-id="149" data-iscomment="0" title="Like"><i class="fl-custom-icon-like"></i><span class="sl-count">55</span></a></span> </span>
+                                    <div class="date-wrap">
+                                        <span class="date-debut">
+                                            <span class="dd-wrapper">
+                                                <a href="#" class="dd-button" title="Date Debut">
+                                                    <i class="fl-custom-icon-calendar-start"></i>
+                                                    <span class="dd-label">Date Debut: </span>
+                                                    <span class="dd-date">{{ objectif?.dateDebut }}</span>
+                                                </a>
+                                            </span>
+                                        </span>
+                                        <span class="date-fin">
+                                            <span class="df-wrapper">
+                                                <a href="#" class="df-button" title="Date Fin">
+                                                    <i class="fl-custom-icon-calendar-end"></i>
+                                                    <span class="df-label">Date Fin: </span>
+                                                    <span class="df-date">{{ objectif?.dateFin }}</span>
+                                                </a>
+                                            </span>
+                                        </span>
                                     </div>
+                                    
 
                                 </div>
 
@@ -84,7 +101,7 @@
                     <div class="uk-width-1-3@l">
                         <div class="widjet --my-list">
                             <div class="widjet__head">
-                                <h3 class="uk-text-lead">My Groups</h3><a href="10_game-profile.html">View All</a>
+                                <h3 class="uk-text-lead">Mes Stratégies Marketing</h3><a href="10_game-profile.html">View All</a>
                             </div>
                             <div class="widjet__body">
                                 <ul class="my-game-list">
