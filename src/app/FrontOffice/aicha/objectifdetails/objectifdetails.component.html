@@ -18,10 +18,7 @@
                         <div class="news-feed news-feed-post">
                             <div class="post-header">
                                 <div class="user-info">
-                                    <div class="user-info__avatar"><img *ngIf="previewImage; else placeholder" [src]="previewImage" alt="{{ user.image }}" class="img-thumbnail" >
-                                        <ng-template #placeholder>
-                                            <img *ngIf="user" [src]="'assets/images/' + getImageFileName(user.image)" alt="{{ user.image }}">        
-                                        </ng-template></div>
+                                    <div class="user-info__avatar">  <img [src]="user.image ? user.image : 'default_image.png'" alt="User Image" ></div>
                                         <div class="user-info__box">
                                             <div class="user-info__title">{{ user.userName }}</div>
                                             <div class="user-info__text">{{ user.userFirstName }} {{ user.userLastName }}</div>

@@ -38,10 +38,7 @@
                             <div class="widjet__body">
                                 <div class="user-info">
                                     <div class="user-info__avatar">
-                                        <img *ngIf="previewImage; else placeholder" [src]="previewImage" alt="{{ user.image }}" class="img-thumbnail" >
-                                        <ng-template #placeholder>
-                                            <img *ngIf="user" [src]="'assets/images/' + getImageFileName(user.image)" alt="{{ user.image }}">        
-                                        </ng-template>
+                                        <img [src]="user.image ? user.image : 'default_image.png'" alt="User Image" >
                                     </div>
                                     <div class="user-info__box">
                                       <div class="user-info__title">{{ user.userFirstName }} {{ user.userLastName }}</div>

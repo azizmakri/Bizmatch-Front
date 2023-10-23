@@ -14,10 +14,7 @@
           <div class="page-header__action">
               <a class="action-btn" href="06_chats.html"><i class="ico_message"></i><span class="animation-ripple-delay1"></span></a>
               <a class="action-btn" href="07_friends.html"><i class="ico_notification"></i><span class="animation-ripple-delay2"></span></a>
-              <a class="profile" href="08_wallet.html"><img *ngIf="previewImage; else placeholder" [src]="previewImage" alt="{{ user.image }}" class="img-thumbnail" >
-                <ng-template #placeholder>
-                    <img *ngIf="user" [src]="'assets/images/' + getImageFileName(user.image)" alt="{{ user.image }}">        
-                </ng-template></a>
+              <a class="profile" href="08_wallet.html">  <img [src]="user.image ? user.image : 'default_image.png'" alt="User Image" ></a>
           </div>
           <div *ngIf="isLoggedIn" class="logout-container"> <!-- Conditional rendering based on isLoggedIn -->
             <!-- New div to show when user IS logged in -->
