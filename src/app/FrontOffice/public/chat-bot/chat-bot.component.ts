@@ -68,5 +68,7 @@ export class ChatBotComponent {
       const botResponse = response.msg;
       this.messages.push({ text: botResponse, sender: 'bot', timestamp: new Date() });
     });
+    this.message = '';
+
   }
 }

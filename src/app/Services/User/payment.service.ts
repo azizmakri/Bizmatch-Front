@@ -22,4 +22,15 @@ export class PaymentService {
     const url = `http://localhost:8888/payment/getall`;
     return this.http.get<any>(url);
   }
+  getTotalPayment(userName: string, year: number, month: number): Observable<any> {
+    const url = `http://localhost:8888/payment/totalpayment?userName=${userName}&year=${year}&month=${month}`;
+    return this.http.get<any>(url);
+}
+
+
+getTotalAmountForCurrentMonth(): Observable<any> {
+  const url = `http://localhost:8888/payment/total-amount/current-month`;
+  return this.http.get<any>(url);
+}
+
 }

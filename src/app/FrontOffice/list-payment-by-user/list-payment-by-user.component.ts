@@ -12,7 +12,7 @@ export class ListPaymentByUserComponent {
   userName!: string;  // Modified this line to use the value from local storage
   payments: any[] = []; // Your payments data
   displayedPayments: any[] = []; // The payments to be displayed on the current page
-
+  totalPayment: number = 0;
   length = this.payments.length;
   pageSize = 10;
   pageIndex = 0;
@@ -20,6 +20,13 @@ export class ListPaymentByUserComponent {
 
   constructor(private paymentService: PaymentService) {
     this.getUserNameFromLocalStorage();  // Invoke the method to set the userName
+  }
+  fetchTotalPayment(): void {
+    const currentYear = new Date().getFullYear();
+    const currentMonth = new Date().getMonth() + 1;
+    this.paymentService.getTotalPayment(this.userName, currentYear, currentMonth).subscribe(data => {
+      this.totalPayment = data;
+    });
   }
 
  // Triggered when page changes
@@ -38,6 +45,8 @@ export class ListPaymentByUserComponent {
 
   ngOnInit(): void {
     this.fetchPayments();
+    this.fetchTotalPayment();
+
   }
 
   fetchPayments(): void {

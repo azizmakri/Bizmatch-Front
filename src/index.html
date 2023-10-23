@@ -8,7 +8,7 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="shortcut icon" href="assets/img/lg (1).png" type="image/x-icon">
 
-  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="assets/css/libs.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
 
@@ -74,6 +74,8 @@
   <app-root></app-root>
 
 </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="assets/js/libs.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -99,3 +101,13 @@
 
 
 </html>
+<script type="text/javascript">
+  $(document).ready(function(){
+      $("#search").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#paymentTable tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+      });
+  });
+</script>

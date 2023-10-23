@@ -1,6 +1,33 @@
 .green-background {
-    color: green;
-    padding: 2px; 
-    border-radius: 5px; 
-  }
+  color: green;
+  padding: 2px; 
+  border-radius: 5px; 
+}
+/* Existing CSS stays unchanged */
+
+/* Modifications */
+.total-payment-panel {
+  position: absolute;
+  bottom: 0;  /* Places it at the bottom */
+  right: 0;  /* Places it to the right */
+  width: 200px;
+  background-color: #f7f7f7;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: -2px 0px 10px rgba(0,0,0,0.1);
   
+  /* These are not needed anymore */
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+}
+
+
+.total-payment-content {
+  text-align: center;
+}
+
+.total-amount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2196f3;
+}

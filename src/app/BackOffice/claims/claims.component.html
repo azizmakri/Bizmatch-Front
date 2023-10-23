@@ -52,7 +52,6 @@
               <thead class="table-light">
                <tr>
                  <th>Nom D'utilisateur</th>
-                 <th>Photo</th>
                  <th>Titre</th>
                  <th>Status</th>
                  <th>description</th>
@@ -64,7 +63,6 @@
                <tbody>
                 <tr *ngFor="let claim of formulaires">
                                   <td>{{ claim.user.userName }}</td>
-                <td><img src="https://via.placeholder.com/400X300/212529/fff" class="product-img-2" alt="product img"></td>
                 <td>{{ claim.titre }}</td>
                 <td><span class="badge bg-light-success text-success w-100">{{ claim.status }}</span></td>
                 <td>{{ claim.description }}</td>

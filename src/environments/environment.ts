@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   hmr: false,
-  stripe: 'pk_test_51KZPLpK9uxhGdpuqPlH6VaaVvxOORq9Leh7WqZTvEp6CWjBuFMM00sQYclQ8cwx76R4Id37uA186OhnS2qgnkQPs00E5NROAOG',
+  stripe: 'pk_test_51O4Om8GxnCYriM4Yt8sXgd49ixQxaqaM26csMLeST3DmBiL28iAqozoQy899FOBfg4PvdN1yFaEOJXPJKeiKNrww00t3SHpS1g',
 
   apiUrl: 'http://localhost:8888/api'
 };
